@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ADORA Digital Agency — Packages</title>
+<meta name="description" content="ADORA Digital Agency — Social media management and short video editing packages. We will build your brand you'd wish you met us earlier."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --black:#0a0a0a; --white:#ffffff; --gold:#c9a84c; --gold2:#e8c96a;
+  --off:#f9f8f5; --gray:#555; --lgray:#e0ddd6; --border:#e8e4dc;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Outfit',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+::selection{background:var(--gold);color:var(--black);}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.section{padding:96px 0;}
+.section-alt{background:var(--off);}
+.section-dark{background:var(--black);}
+
+/* Progress */
+#prog{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(to right,var(--gold),var(--gold2));z-index:999;transition:width .1s;}
+
+/* Nav */
+nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:66px;display:flex;align-items:center;transition:box-shadow .3s;}
+nav.sc{box-shadow:0 2px 20px rgba(0,0,0,.06);}
+.nav-in{max-width:1100px;margin:0 auto;padding:0 2rem;width:100%;display:flex;align-items:center;justify-content:space-between;}
+.n-logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;letter-spacing:.1em;display:flex;align-items:center;gap:3px;}
+.n-logo .dot{color:var(--gold);}
+.n-links{display:flex;gap:28px;align-items:center;}
+.n-links a{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);transition:color .2s;position:relative;padding-bottom:2px;}
+.n-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s;}
+.n-links a:hover::after{width:100%;}
+.n-links a:hover{color:var(--gold);}
+.n-cta{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:var(--black);color:var(--white);padding:10px 20px;border:none;cursor:pointer;transition:background .3s;}
+.n-cta:hover{background:var(--gold);color:var(--black);}
+/* hamburger */
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer;}
+.hbg span{display:block;width:22px;height:2px;background:var(--black);transition:all .3s;}
+.hbg.op span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hbg.op span:nth-child(2){opacity:0;}
+.hbg.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob{display:none;position:fixed;inset:0;z-index:90;background:var(--white);flex-direction:column;align-items:center;justify-content:center;gap:26px;padding-top:69px;}
+.mob.op{display:flex;}
+.mob a{font-family:var(--serif);font-size:2.6rem;font-weight:300;transition:color .2s;}
+.mob a:hover{color:var(--gold);}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+/* Eyebrow */
+.ey{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.ey-line{width:36px;height:2px;background:var(--gold);flex-shrink:0;}
+.ey-text{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
+
+/* Buttons */
+.btn-dk{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:var(--white);font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:14px 28px;border:1.5px solid var(--black);transition:all .3s;cursor:pointer;}
+.btn-dk:hover{background:transparent;color:var(--black);}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--black);font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:14px 28px;border:1.5px solid var(--gold);transition:all .3s;cursor:pointer;}
+.btn-gold:hover{background:var(--gold2);border-color:var(--gold2);}
+.btn-gh{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--black);font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:14px 28px;border:1.5px solid var(--black);transition:all .3s;cursor:pointer;}
+.btn-gh:hover{background:var(--black);color:var(--white);}
+
+/* Hero */
+.hero{min-height:100vh;padding-top:69px;display:flex;align-items:center;background:var(--white);position:relative;overflow:hidden;}
+.hero-ghost{position:absolute;right:-2%;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:clamp(120px,19vw,260px);font-weight:700;color:var(--black);opacity:.03;pointer-events:none;user-select:none;white-space:nowrap;}
+.hero-inner{padding:64px 0;}
+h1.hero-h{font-family:var(--serif);font-size:clamp(3rem,6.5vw,6rem);font-weight:300;line-height:.95;letter-spacing:-.03em;margin-bottom:16px;}
+h1.hero-h em{font-style:italic;color:var(--gold);}
+.hero-tagline{font-family:var(--serif);font-size:clamp(1rem,2vw,1.5rem);font-weight:300;font-style:italic;color:var(--gold);margin-bottom:22px;}
+.hero-sub{font-size:1rem;line-height:1.85;color:var(--gray);font-weight:300;max-width:520px;margin-bottom:38px;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:52px;}
+.hero-stats{display:flex;flex-wrap:wrap;gap:36px;padding-top:26px;border-top:1px solid var(--border);}
+.sn{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--black);line-height:1;}
+.sn span{color:var(--gold);}
+.sl{font-size:.65rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:5px;}
+
+/* Ticker */
+.ticker{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:13px 0;}
+.t-track{display:flex;white-space:nowrap;animation:tick 30s linear infinite;}
+.t-track:hover{animation-play-state:paused;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ti{display:inline-flex;align-items:center;gap:18px;padding:0 26px;font-size:.67rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);}
+.ti .dot{color:var(--gold);}
+
+/* Section headings */
+.sec-h{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-top:10px;}
+.sec-h em{font-style:italic;color:var(--gold);}
+.sec-sub{font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;max-width:540px;margin-top:14px;}
+
+/* Note box */
+.note-box{background:#fffbf0;border-left:3px solid var(--gold);padding:18px 22px;margin:28px 0;}
+.note-box p{font-size:.92rem;color:var(--gray);line-height:1.7;font-weight:300;}
+.note-box strong{color:var(--black);font-weight:600;}
+
+/* Package cards */
+.pkgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.pkg{background:var(--white);padding:38px 30px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .3s;}
+.pkg::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--gold);transition:width .5s;}
+.pkg:hover::after{width:100%;}
+.pkg.dark{background:var(--black);}
+.badge{display:inline-flex;align-items:center;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:4px 10px;margin-bottom:16px;width:fit-content;}
+.pkg-name{font-family:var(--serif);font-size:1.7rem;font-weight:400;color:var(--black);margin-bottom:4px;}
+.pkg.dark .pkg-name{color:var(--white);}
+.pkg-price{font-family:var(--serif);font-size:2.8rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:4px;}
+.pkg-period{font-size:.78rem;color:var(--gray);margin-bottom:6px;}
+.pkg.dark .pkg-period{color:#aaa;}
+.pkg-tag{font-size:.88rem;color:var(--gray);font-style:italic;font-weight:300;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border);}
+.pkg.dark .pkg-tag{color:#aaa;border-bottom-color:#1e1e1e;}
+.pkg-feats{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:26px;}
+.pkg-feats li{display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--gray);line-height:1.55;font-weight:300;}
+.pkg.dark .pkg-feats li{color:#ccc;}
+.pkg-feats li::before{content:'+';color:var(--gold);font-weight:700;font-size:1rem;flex-shrink:0;line-height:1.4;}
+/* video badge on feature */
+.vid-tag{display:inline-block;background:rgba(201,168,76,.12);color:var(--gold);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-left:5px;vertical-align:middle;}
+
+/* Platform note */
+.plat-note{background:var(--off);border:1px solid var(--border);padding:26px 30px;margin-bottom:44px;display:flex;align-items:flex-start;gap:16px;}
+.plat-note .ico{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
+.plat-note h4{font-size:.88rem;font-weight:700;margin-bottom:5px;}
+.plat-note p{font-size:.88rem;color:var(--gray);line-height:1.7;font-weight:300;}
+
+/* Comparison */
+.comp-wrap{overflow-x:auto;}
+.comp-tbl{width:100%;border-collapse:collapse;min-width:700px;}
+.comp-tbl th,.comp-tbl td{padding:12px 14px;text-align:center;border-bottom:1px solid var(--border);font-size:.87rem;}
+.comp-tbl th:first-child,.comp-tbl td:first-child{text-align:left;font-weight:500;padding-left:0;}
+.comp-tbl thead th{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);background:var(--black);padding:16px 14px;}
+.comp-tbl thead th.hl{background:var(--gold);color:var(--black);}
+.comp-tbl tbody tr:nth-child(even){background:var(--off);}
+.comp-tbl tbody tr:hover{background:#fffbf0;}
+.comp-tbl td.hl{background:#fffbf0;}
+.chk{color:var(--gold);font-weight:700;}
+.crs{color:#ccc;}
+.comp-tbl tfoot td{font-size:.78rem;color:var(--gray);font-style:italic;padding-top:14px;text-align:left;border:none;}
+
+/* FAQ */
+.faq-wrap{display:flex;flex-direction:column;}
+.faq-it{border-bottom:1px solid var(--border);}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-family:var(--sans);font-size:.95rem;font-weight:600;color:var(--black);text-align:left;transition:color .2s;}
+.faq-q:hover{color:var(--gold);}
+.faq-ic{font-size:1.4rem;color:var(--gold);flex-shrink:0;transition:transform .3s;font-weight:300;line-height:1;}
+.faq-it.open .faq-ic{transform:rotate(45deg);}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-ans p{font-size:.92rem;color:var(--gray);line-height:1.8;font-weight:300;padding-bottom:20px;}
+
+/* Contact section */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.c-label{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.c-val{font-size:.95rem;color:var(--white);}
+.c-val a{transition:color .2s;}
+.c-val a:hover{color:var(--gold);}
+.social-row{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.social-row:hover .s-name{color:var(--gold);}
+.social-row:hover .s-icon{border-color:var(--gold);}
+.s-icon{width:36px;height:36px;border:1.5px solid #333;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s;}
+.s-name{font-size:.88rem;color:#aaa;transition:color .2s;}
+
+/* CTA banner */
+.cta-ban{padding:100px 0;text-align:center;background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.cta-ban::before{content:'ADORA';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:22vw;font-weight:700;color:var(--black);opacity:.025;pointer-events:none;}
+.cta-h{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.8rem);font-weight:300;color:var(--black);line-height:1.05;margin-bottom:14px;position:relative;}
+.cta-h em{font-style:italic;color:var(--gold);}
+.cta-sub{font-size:1rem;color:var(--gray);max-width:460px;margin:0 auto 38px;line-height:1.8;font-weight:300;position:relative;}
+.cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;position:relative;}
+
+/* Footer */
+footer{background:var(--black);padding:56px 0 32px;}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.f-logo{font-family:var(--serif);font-size:2rem;font-weight:600;letter-spacing:.1em;color:var(--white);margin-bottom:10px;}
+.f-logo span{color:var(--gold);}
+.f-tagline{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--gold);margin-bottom:14px;}
+.f-desc{font-size:.85rem;color:#666;line-height:1.75;font-weight:300;}
+.f-col-title{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#555;margin-bottom:16px;}
+.f-links{display:flex;flex-direction:column;gap:10px;}
+.f-links a{font-size:.85rem;color:#666;transition:color .2s;}
+.f-links a:hover{color:var(--gold);}
+.f-bottom{padding-top:24px;border-top:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.f-copy{font-size:.76rem;color:#555;}
+
+/* Responsive */
+@media(max-width:1024px){.pkgs-grid{grid-template-columns:1fr 1fr;}.contact-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){
+  .n-links,.n-cta{display:none;}.hbg{display:flex;}
+  .pkgs-grid{grid-template-columns:1fr;}
+  .section{padding:72px 0;}
+  .hero-stats{gap:20px;}
+  .foot-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#hero" class="n-logo">ADORA<span class="dot">.</span></a>
+    <div class="n-links">
+      <a href="index.html">← Home</a>
+      <a href="#packages">Packages</a>
+      <a href="#compare">Compare</a>
+      <a href="#faq">FAQ</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="https://wa.me/2348160115671" target="_blank" class="n-cta">Get In Touch</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob" id="mob">
+  <a href="index.html" onclick="cm()">Home</a>
+  <a href="#packages" onclick="cm()">Packages</a>
+  <a href="#compare"  onclick="cm()">Compare</a>
+  <a href="#faq"      onclick="cm()">FAQ</a>
+  <a href="portfolio.html" onclick="cm()">Portfolio</a>
+  <a href="#contact"  onclick="cm()" style="color:var(--gold);">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-ghost">ADORA</div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="ey rv">
+        <span class="ey-line"></span>
+        <span class="ey-text">Social Media &amp; Video Packages</span>
+      </div>
+      <h1 class="hero-h rv d1">ADORA <em>Digital</em><br>Agency</h1>
+      <p class="hero-tagline rv d2">"We will build your brand you'd wish you met us earlier."</p>
+      <p class="hero-sub rv d3">
+        Premium social media management, content creation, and short video editing packages for brands that refuse to blend in. All prices in Nigerian Naira (NGN).
+      </p>
+      <div class="hero-btns rv d3">
+        <a href="#packages" class="btn-dk">View Packages →</a>
+        <a href="#compare"  class="btn-gh">Compare Plans</a>
+      </div>
+      <div class="hero-stats rv d4">
+        <div><div class="sn">3<span>+</span></div><div class="sl">Package Tiers</div></div>
+        <div><div class="sn">28<span>+</span></div><div class="sl">Posts/Mo (Pro)</div></div>
+        <div><div class="sn">4</div><div class="sl">Platforms (Pro)</div></div>
+        <div><div class="sn">0</div><div class="sl">Hidden Fees</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="t-track">
+    <span class="ti">Social Media Management <span class="dot">✦</span></span>
+    <span class="ti">Short Video Editing <span class="dot">✦</span></span>
+    <span class="ti">Custom Graphics <span class="dot">✦</span></span>
+    <span class="ti">Caption Copywriting <span class="dot">✦</span></span>
+    <span class="ti">Community Management <span class="dot">✦</span></span>
+    <span class="ti">Analytics &amp; Reporting <span class="dot">✦</span></span>
+    <span class="ti">Brand Strategy <span class="dot">✦</span></span>
+    <span class="ti">Reels &amp; Shorts Editing <span class="dot">✦</span></span>
+    <span class="ti">Social Media Management <span class="dot">✦</span></span>
+    <span class="ti">Short Video Editing <span class="dot">✦</span></span>
+    <span class="ti">Custom Graphics <span class="dot">✦</span></span>
+    <span class="ti">Caption Copywriting <span class="dot">✦</span></span>
+    <span class="ti">Community Management <span class="dot">✦</span></span>
+    <span class="ti">Analytics &amp; Reporting <span class="dot">✦</span></span>
+    <span class="ti">Brand Strategy <span class="dot">✦</span></span>
+    <span class="ti">Reels &amp; Shorts Editing <span class="dot">✦</span></span>
+  </div>
+</div>
+
+<!-- PACKAGES -->
+<section id="packages" class="section" style="scroll-margin-top:69px;">
+  <div class="wrap">
+
+    <div class="rv" style="margin-bottom:44px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text">Our Packages</span></div>
+      <h2 class="sec-h">Choose Your <em>Plan</em></h2>
+      <p class="sec-sub">All prices in NGN, billed monthly at end of month on an agreed date. Minimum 3-month commitment. Prices exclude VAT.</p>
+    </div>
+
+    <div class="plat-note rv">
+      <div class="ico">💡</div>
+      <div>
+        <h4>Facebook + Instagram = One Platform</h4>
+        <p>We cross-post from Instagram to Facebook at no extra cost — they always count as a single platform. Story and carousel volumes are determined collaboratively. All paid ad campaigns are run through <strong>your own profiles and ad accounts</strong> — you retain full ownership.</p>
+      </div>
+    </div>
+
+    <div class="pkgs-grid rv">
+
+      <!-- STARTER -->
+      <div class="pkg">
+        <p class="pkg-name">Starter</p>
+        <p class="pkg-price">₦200,000</p>
+        <p class="pkg-period">per month</p>
+        <p class="pkg-tag">For brands building their first social media presence.</p>
+        <ul class="pkg-feats">
+          <li><span>2 social media platforms — Facebook &amp; Instagram as one, plus one additional platform (e.g. LinkedIn or X)</span></li>
+          <li><span>3 posts per week — 12 posts per month</span></li>
+          <li><span>Custom-designed graphics for every post</span></li>
+          <li><span>Short video editing — Reels, TikToks, and Shorts <span class="vid-tag">VIDEO</span></span></li>
+          <li><span>Caption copywriting in your brand voice</span></li>
+          <li><span>Hashtag research and optimisation</span></li>
+          <li><span>Monthly content calendar provided in advance</span></li>
+          <li><span>Basic community management — comments and reactions</span></li>
+          <li><span>Monthly performance summary report</span></li>
+          <li><span>Brand onboarding strategy session — 1 hour</span></li>
+        </ul>
+        <a href="https://wa.me/2348160115671" target="_blank" class="btn-gh" style="justify-content:center;margin-top:auto;">Get Started</a>
+      </div>
+
+      <!-- GROWTH — featured -->
+      <div class="pkg dark">
+        <span class="badge">⭐ Most Popular</span>
+        <p class="pkg-name">Growth</p>
+        <p class="pkg-price">₦350,000</p>
+        <p class="pkg-period" style="color:#aaa;">per month</p>
+        <p class="pkg-tag">For brands ready to scale and build a loyal audience.</p>
+        <ul class="pkg-feats">
+          <li><span>3 social media platforms — Facebook &amp; Instagram as one, plus two additional platforms of your choice</span></li>
+          <li><span>5 posts per week — 20 posts per month</span></li>
+          <li><span>Custom-designed graphics and branded templates for every post</span></li>
+          <li><span>Short video editing — Reels, TikToks, and YouTube Shorts <span class="vid-tag">VIDEO</span></span></li>
+          <li><span>Video caption and text overlay design for edited videos <span class="vid-tag">VIDEO</span></span></li>
+          <li><span>Caption copywriting — long and short form</span></li>
+          <li><span>Hashtag strategy and SEO-optimised captions</span></li>
+          <li><span>Monthly content calendar and brand tone guide</span></li>
+          <li><span>Active community management — DMs, comments, and mentions</span></li>
+          <li><span>Bi-weekly strategy check-in calls</span></li>
+          <li><span>Monthly detailed analytics and growth report</span></li>
+          <li><span>Competitor analysis — quarterly</span></li>
+          <li><span>2 rounds of revisions per content batch</span></li>
+        </ul>
+        <a href="https://wa.me/2348160115671" target="_blank" class="btn-gold" style="justify-content:center;margin-top:auto;">Get Started</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="pkg">
+        <p class="pkg-name">Pro</p>
+        <p class="pkg-price">₦490,000</p>
+        <p class="pkg-period">per month</p>
+        <p class="pkg-tag">For brands serious about market leadership and maximum impact.</p>
+        <ul class="pkg-feats">
+          <li><span>4 social media platforms — Facebook &amp; Instagram as one, plus three additional platforms of your choice</span></li>
+          <li><span>7 posts per week — posting every single day, 28+ posts per month</span></li>
+          <li><span>Premium custom graphics, branded assets, and infographics for every post</span></li>
+          <li><span>Short video editing — Reels, TikToks, Shorts, and branded video content <span class="vid-tag">VIDEO</span></span></li>
+          <li><span>Full video caption design, text overlays, and on-brand motion titles <span class="vid-tag">VIDEO</span></span></li>
+          <li><span>Video scripting and creative direction brief for filming</span></li>
+          <li><span>Full caption copywriting — all formats and lengths</span></li>
+          <li><span>Advanced hashtag, keyword, and SEO strategy</span></li>
+          <li><span>Full content calendar, brand style guide, and tone of voice document</span></li>
+          <li><span>Priority community management — same-day responses</span></li>
+          <li><span>Weekly strategy and performance calls</span></li>
+          <li><span>Comprehensive monthly analytics report with growth roadmap</span></li>
+          <li><span>Influencer outreach research and coordination support</span></li>
+          <li><span>Paid social campaign strategy and ad copy — run through your profiles</span></li>
+          <li><span>Monthly competitor monitoring and industry trend report</span></li>
+          <li><span>Unlimited revisions on all content</span></li>
+        </ul>
+        <a href="https://wa.me/2348160115671" target="_blank" class="btn-dk" style="justify-content:center;margin-top:auto;">Get Started</a>
+      </div>
+
+    </div>
+
+    <div class="note-box rv" style="margin-top:28px;">
+      <p>Need something bigger? <strong>Enterprise / Custom packages</strong> are available for large organisations or multi-brand management. Pricing confirmed after a free discovery session — no commitment required. <a href="https://wa.me/2348160115671" target="_blank" style="color:var(--gold);font-weight:600;">Get in touch →</a></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="compare" class="section section-alt" style="scroll-margin-top:69px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:44px;text-align:center;">
+      <div class="ey" style="justify-content:center;"><span class="ey-line"></span><span class="ey-text">Compare</span><span class="ey-line"></span></div>
+      <h2 class="sec-h">Packages <em>at a Glance</em></h2>
+    </div>
+    <div class="comp-wrap rv">
+      <table class="comp-tbl">
+        <thead>
+          <tr>
+            <th style="text-align:left;">Feature</th>
+            <th>Starter<br><span style="font-weight:400;font-size:.75em;opacity:.8;">₦200K/mo</span></th>
+            <th class="hl">Growth<br><span style="font-weight:400;font-size:.75em;opacity:.8;">₦350K/mo</span></th>
+            <th>Pro<br><span style="font-weight:400;font-size:.75em;opacity:.8;">₦490K/mo</span></th>
+            <th>Enterprise<br><span style="font-weight:400;font-size:.75em;opacity:.8;">Custom</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Platforms Managed</td><td>2</td><td class="hl">3</td><td>4</td><td>Unlimited</td></tr>
+          <tr><td>FB + IG as One Platform</td><td><span class="chk">✓</span></td><td class="hl"><span class="chk">✓</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Posts per Month</td><td>12</td><td class="hl">20</td><td>28+</td><td>Custom</td></tr>
+          <tr><td>Posts per Week</td><td>3</td><td class="hl">5</td><td>7 — daily</td><td>Custom</td></tr>
+          <tr><td>Custom Graphics</td><td><span class="chk">✓</span></td><td class="hl"><span class="chk">✓</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Short Video Editing</td><td><span class="chk">✓</span></td><td class="hl"><span class="chk">✓</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Video Caption &amp; Overlay Design</td><td><span class="crs">—</span></td><td class="hl"><span class="chk">✓</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Video Scripting Brief</td><td><span class="crs">—</span></td><td class="hl"><span class="crs">—</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Caption Copywriting</td><td><span class="chk">✓</span></td><td class="hl"><span class="chk">✓</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Hashtag Strategy</td><td><span class="chk">✓</span></td><td class="hl"><span class="chk">✓</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Content Calendar</td><td><span class="chk">✓</span></td><td class="hl"><span class="chk">✓</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Community Management</td><td>Basic</td><td class="hl">Active</td><td>Priority</td><td>Dedicated</td></tr>
+          <tr><td>Strategy Calls</td><td>Monthly</td><td class="hl">Bi-weekly</td><td>Weekly</td><td>Weekly+</td></tr>
+          <tr><td>Analytics Report</td><td>Summary</td><td class="hl">Detailed</td><td>Full</td><td>Dashboard</td></tr>
+          <tr><td>Competitor Analysis</td><td><span class="crs">—</span></td><td class="hl">Quarterly</td><td>Monthly</td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Ad Campaign Strategy</td><td><span class="crs">—</span></td><td class="hl"><span class="crs">—</span></td><td><span class="chk">✓</span></td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Influencer Support</td><td><span class="crs">—</span></td><td class="hl"><span class="crs">—</span></td><td>Research</td><td><span class="chk">✓</span></td></tr>
+          <tr><td>Revisions</td><td>1 round</td><td class="hl">2 rounds</td><td>Unlimited</td><td>Unlimited</td></tr>
+          <tr><td>Dedicated Account Manager</td><td><span class="crs">—</span></td><td class="hl"><span class="crs">—</span></td><td><span class="crs">—</span></td><td><span class="chk">✓</span></td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="5">* Growth column highlighted. FB + IG always count as one platform. All ad campaigns run through your own profiles and accounts. Payment due end of month on agreed date.</td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section" style="scroll-margin-top:69px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:44px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text">FAQ</span></div>
+      <h2 class="sec-h">Common <em>Questions</em></h2>
+    </div>
+    <div class="faq-wrap rv" style="max-width:760px;">
+
+      <div class="faq-it">
+        <button class="faq-q" onclick="tf(this)"><span>Do Facebook and Instagram count as one platform?</span><span class="faq-ic">+</span></button>
+        <div class="faq-ans"><p>Yes. We manage your Instagram and cross-post all content to Facebook automatically — both are covered under one platform slot across all packages, at no additional cost.</p></div>
+      </div>
+
+      <div class="faq-it">
+        <button class="faq-q" onclick="tf(this)"><span>What type of videos do you edit?</span><span class="faq-ic">+</span></button>
+        <div class="faq-ans"><p>We edit short-form video content including Instagram Reels, TikToks, and YouTube Shorts. This includes cuts, transitions, text overlays, captions, and on-brand formatting. For Growth and Pro packages, we also include caption design and title overlays. Full long-form video production is available as a separate add-on.</p></div>
+      </div>
+
+      <div class="faq-it">
+        <button class="faq-q" onclick="tf(this)"><span>How does paid advertising work?</span><span class="faq-ic">+</span></button>
+        <div class="faq-ans"><p>All paid advertising campaigns are run directly through your own social media profiles and ad accounts. You retain full ownership and visibility of your campaigns at all times. We provide the strategy, audience targeting, and ad copy — the spend goes through your account so everything stays transparent.</p></div>
+      </div>
+
+      <div class="faq-it">
+        <button class="faq-q" onclick="tf(this)"><span>When is payment due?</span><span class="faq-ic">+</span></button>
+        <div class="faq-ans"><p>Payment is due at the end of each month on an agreed date. We establish a clear payment schedule during onboarding so you always know when your invoice is due and can plan accordingly.</p></div>
+      </div>
+
+      <div class="faq-it">
+        <button class="faq-q" onclick="tf(this)"><span>What is the minimum commitment?</span><span class="faq-ic">+</span></button>
+        <div class="faq-ans"><p>All packages require a minimum 3-month commitment to ensure we can build strategy, create content, and deliver measurable results. Month-to-month arrangements are available after the initial term at a +15% premium.</p></div>
+      </div>
+
+      <div class="faq-it">
+        <button class="faq-q" onclick="tf(this)"><span>How does content approval work?</span><span class="faq-ic">+</span></button>
+        <div class="faq-ans"><p>All content — including edited videos, graphics, and captions — is shared with you for review and approval 5 days before it is scheduled to go live. You can request revisions within your package allowance before publishing.</p></div>
+      </div>
+
+      <div class="faq-it">
+        <button class="faq-q" onclick="tf(this)"><span>What about carousels and Stories?</span><span class="faq-ic">+</span></button>
+        <div class="faq-ans"><p>Carousel post and Story content volumes are not fixed to a number — we determine the right mix collaboratively based on your brand, your audience, and what performs best each month. This ensures every piece of content serves a purpose rather than filling a quota.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-ban">
+  <div class="wrap">
+    <h2 class="cta-h rv">Ready to Grow Your <em>Brand?</em></h2>
+    <p class="cta-sub rv d1">Select a package or reach out and we will build a custom plan together. We respond within 24 hours.</p>
+    <div class="cta-btns rv d2">
+      <a href="https://wa.me/2348160115671" target="_blank" class="btn-dk">Get In Touch →</a>
+      <a href="https://wa.me/2348160115671" target="_blank" class="btn-gh">WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="section section-dark" style="scroll-margin-top:69px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:52px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text" style="color:var(--gold);">Contact</span></div>
+      <h2 class="sec-h" style="color:var(--white);">Let's <em>Connect</em></h2>
+    </div>
+    <div class="contact-grid rv">
+
+      <!-- Brand info -->
+      <div>
+        <div style="font-family:var(--serif);font-size:2.4rem;font-weight:600;letter-spacing:.1em;color:var(--white);margin-bottom:8px;">ADORA<span style="color:var(--gold);">.</span></div>
+        <p style="font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--gold);margin-bottom:18px;">"We will build your brand you'd wish you met us earlier."</p>
+        <p style="font-size:.9rem;color:#888;line-height:1.8;font-weight:300;max-width:340px;">ADORA Digital Agency is a social media marketing and video content agency helping personal and corporate brands become unforgettable through strategy, content, and growth.</p>
+      </div>
+
+      <!-- Contact details -->
+      <div style="display:flex;flex-direction:column;gap:26px;">
+
+        <div>
+          <p class="c-label">Email</p>
+          <p class="c-val"><a href="mailto:adoradigitalagency7@gmail.com" style="color:var(--white);">adoradigitalagency7@gmail.com</a></p>
+        </div>
+
+        <div>
+          <p class="c-label">WhatsApp</p>
+          <p class="c-val"><a href="https://wa.me/2348160115671" target="_blank" style="color:var(--white);">+234 816 011 5671</a></p>
+        </div>
+
+        <div>
+          <p class="c-label" style="margin-bottom:14px;">Find Us On</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+
+            <a href="https://instagram.com/adoradigitalagency" target="_blank" class="social-row">
+              <div class="s-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="#c9a84c" stroke-width="1.8" fill="none"/><circle cx="12" cy="12" r="4.5" stroke="#c9a84c" stroke-width="1.8" fill="none"/><circle cx="17.5" cy="6.5" r="1.2" fill="#c9a84c"/></svg>
+              </div>
+              <span class="s-name">adoradigitalagency</span>
+            </a>
+
+            <a href="https://tiktok.com/@adoradigitalagency" target="_blank" class="social-row">
+              <div class="s-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#c9a84c"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+              </div>
+              <span class="s-name">adoradigitalagency</span>
+            </a>
+
+            <a href="https://twitter.com/adoradigitalagency" target="_blank" class="social-row">
+              <div class="s-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </div>
+              <span class="s-name">adoradigitalagency</span>
+            </a>
+
+            <a href="https://facebook.com/adoradigitalagency" target="_blank" class="social-row">
+              <div class="s-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="s-name">adoradigitalagency</span>
+            </a>
+
+            <a href="https://linkedin.com/company/adoradigitalagency" target="_blank" class="social-row">
+              <div class="s-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#c9a84c" stroke-width="1.8" fill="none"/><path d="M7 10v7M7 7v.5M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <span class="s-name">adoradigitalagency</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="f-logo">ADORA<span>.</span></div>
+        <p class="f-tagline">"We will build your brand you'd wish you met us earlier."</p>
+        <p class="f-desc">Premium social media management and short video editing for brands that refuse to blend in.</p>
+      </div>
+      <div>
+        <p class="f-col-title">Quick Links</p>
+        <div class="f-links">
+          <a href="#packages">Packages</a>
+          <a href="#compare">Compare Plans</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="f-col-title">Get In Touch</p>
+        <div class="f-links">
+          <a href="mailto:adoradigitalagency7@gmail.com">adoradigitalagency7@gmail.com</a>
+          <a href="https://wa.me/2348160115671" target="_blank">+234 816 011 5671</a>
+          <a href="https://instagram.com/adoradigitalagency" target="_blank">@adoradigitalagency</a>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p class="f-copy">© 2025 ADORA Digital Agency. All rights reserved.</p>
+      <p class="f-copy" style="font-family:var(--serif);font-style:italic;color:#444;">Strategy. Story. Sales.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Progress bar */
+const prog = document.getElementById('prog');
+const nav = document.getElementById('nav');
+let ls = 0, nh = false;
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  prog.style.width = (sy / dh * 100) + '%';
+  nav.classList.toggle('sc', sy > 50);
+  if (sy > 200) {
+    if (sy > ls + 8 && !nh) { nav.style.transform = 'translateY(-100%)'; nh = true; }
+    else if (sy < ls - 4 && nh) { nav.style.transform = 'translateY(0)'; nh = false; }
+  } else { nav.style.transform = 'translateY(0)'; nh = false; }
+  ls = sy;
+}, { passive: true });
+
+/* Reveal */
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); window.scrollTo({ top: t.offsetTop - 72, behavior: 'smooth' }); }
+  });
+});
+
+/* FAQ */
+function tf(btn) {
+  const it = btn.closest('.faq-it');
+  const ans = it.querySelector('.faq-ans');
+  const open = it.classList.contains('open');
+  document.querySelectorAll('.faq-it.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-ans').style.maxHeight = '0';
+  });
+  if (!open) { it.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+}
+
+/* Card spotlight */
+document.querySelectorAll('.pkg:not(.dark)').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+    const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+    card.style.background = `radial-gradient(circle at ${x}% ${y}%, #fefcf5 0%, #f9f8f5 60%, #fff 100%)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.background = ''; });
+});
+
+/* Hamburger */
+const hbg = document.getElementById('hbg'), mob = document.getElementById('mob');
+hbg.addEventListener('click', () => {
+  hbg.classList.toggle('op'); mob.classList.toggle('op');
+  document.body.style.overflow = mob.classList.contains('op') ? 'hidden' : '';
+});
+function cm() { hbg.classList.remove('op'); mob.classList.remove('op'); document.body.style.overflow = ''; }
+</script>
+</body>
+</html>

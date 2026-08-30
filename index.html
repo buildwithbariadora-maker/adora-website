@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ADORA Digital Agency — We Will Build Your Brand</title>
+<meta name="description" content="ADORA Digital Agency — Social media management, paid advertising, content creation and video editing for brands that refuse to blend in."/>
+<meta property="og:title" content="ADORA Digital Agency"/>
+<meta property="og:description" content="We will build your brand you'd wish you met us earlier."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#0a0a0a;--white:#fff;--gold:#c9a84c;--gold2:#e8c96a;--off:#f9f8f5;--gray:#555;--lgray:#e0ddd6;--border:#e8e4dc;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',sans-serif;--max:1160px;--nav:68px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+::selection{background:var(--gold);color:var(--black);}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 2rem;}
+.sec{padding:96px 0;}
+.sec-alt{background:var(--off);}
+#prog{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(to right,var(--gold),var(--gold2));z-index:1000;pointer-events:none;}
+nav{position:fixed;top:3px;left:0;right:0;z-index:200;height:var(--nav);background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s,transform .4s cubic-bezier(.4,0,.2,1);}
+nav.sc{border-bottom-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.05);}
+.nav-in{max-width:var(--max);margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;justify-content:space-between;}
+.n-logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;letter-spacing:.1em;}
+.n-logo span{color:var(--gold);}
+.n-links{display:flex;gap:22px;align-items:center;}
+.n-links a{font-size:.67rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);position:relative;padding-bottom:2px;transition:color .2s;}
+.n-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s;}
+.n-links a:hover::after,.n-links a.cur::after{width:100%;}
+.n-links a:hover{color:var(--gold);}
+.n-links a.gold{color:var(--gold);font-weight:600;}
+.n-cta{font-size:.67rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:var(--black);color:var(--white);padding:10px 20px;border:1.5px solid var(--black);transition:all .3s;}
+.n-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--black);}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer;}
+.hbg span{display:block;width:22px;height:2px;background:var(--black);transition:all .3s;}
+.hbg.op span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hbg.op span:nth-child(2){opacity:0;}
+.hbg.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob{display:none;position:fixed;inset:0;z-index:190;background:var(--white);flex-direction:column;align-items:center;justify-content:center;gap:22px;padding-top:var(--nav);}
+.mob.op{display:flex;}
+.mob a{font-family:var(--serif);font-size:2.4rem;font-weight:300;transition:color .2s;}
+.mob a:hover{color:var(--gold);}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+.ey{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.ey-line{width:36px;height:2px;background:var(--gold);flex-shrink:0;}
+.ey-text{font-size:.67rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
+.h-sec{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-top:8px;}
+.h-sec em{font-style:italic;color:var(--gold);}
+.sec-sub{font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;max-width:540px;margin-top:14px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:14px 28px;border:1.5px solid;transition:all .3s;cursor:pointer;}
+.btn-dk{background:var(--black);color:var(--white);border-color:var(--black);}
+.btn-dk:hover{background:transparent;color:var(--black);}
+.btn-gd{background:var(--gold);color:var(--black);border-color:var(--gold);}
+.btn-gd:hover{background:var(--gold2);border-color:var(--gold2);}
+.btn-gh{background:transparent;color:var(--black);border-color:var(--black);}
+.btn-gh:hover{background:var(--black);color:var(--white);}
+.btn-wh{background:transparent;color:var(--white);border-color:rgba(255,255,255,.4);}
+.btn-wh:hover{background:var(--white);color:var(--black);}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:var(--nav);display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero-ghost{position:absolute;right:-2%;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:clamp(130px,22vw,320px);font-weight:700;color:var(--black);opacity:.028;pointer-events:none;user-select:none;letter-spacing:-.04em;white-space:nowrap;}
+.h-mega{font-family:var(--serif);font-size:clamp(3.6rem,8vw,8rem);font-weight:300;line-height:.92;letter-spacing:-.03em;margin-bottom:16px;}
+.h-mega em{font-style:italic;color:var(--gold);}
+.h-tagline{font-family:var(--serif);font-size:clamp(1rem,2vw,1.4rem);font-style:italic;color:var(--gold);margin-bottom:20px;font-weight:300;}
+.h-sub{font-size:1rem;line-height:1.85;color:var(--gray);font-weight:300;max-width:520px;margin-bottom:38px;}
+.h-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:52px;}
+.h-stats{display:flex;flex-wrap:wrap;gap:36px;padding-top:28px;border-top:1px solid var(--border);}
+.sn{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--black);line-height:1;}
+.sn span{color:var(--gold);}
+.sl{font-size:.65rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:5px;}
+
+/* TICKER */
+.ticker{background:var(--black);overflow:hidden;padding:13px 0;}
+.t-track{display:flex;white-space:nowrap;animation:tick 32s linear infinite;}
+.t-track:hover{animation-play-state:paused;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ti{display:inline-flex;align-items:center;gap:18px;padding:0 26px;font-size:.67rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#888;}
+.ti .dot{color:var(--gold);}
+
+/* ABOUT */
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.ab-img{position:relative;}
+.ab-img img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;}
+.ab-badge{position:absolute;bottom:-20px;right:-20px;background:var(--gold);padding:24px 28px;}
+.ab-badge .num{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--black);line-height:1;}
+.ab-badge .lbl{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--black);margin-top:4px;}
+.val-row{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);}
+.val-num{font-family:var(--serif);font-size:1.8rem;font-weight:600;color:var(--gold);flex-shrink:0;min-width:52px;}
+.val-text h4{font-size:.88rem;font-weight:600;margin-bottom:3px;}
+.val-text p{font-size:.82rem;color:var(--gray);line-height:1.6;font-weight:300;}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.svc{background:var(--white);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s;}
+.svc::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--gold);transition:width .5s;}
+.svc:hover::after{width:100%;}
+.svc:hover{background:var(--off);}
+.svc-icon{font-size:2rem;margin-bottom:18px;}
+.svc-num{font-family:var(--serif);font-size:.88rem;color:var(--gold);margin-bottom:8px;}
+.svc-name{font-family:var(--serif);font-size:1.5rem;font-weight:400;margin-bottom:12px;}
+.svc-desc{font-size:.87rem;color:var(--gray);line-height:1.75;font-weight:300;margin-bottom:16px;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.svc-tag{font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border:1.5px solid var(--border);color:var(--gray);}
+
+/* ADFLOW */
+.product-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--border);}
+.pc-content{background:var(--black);padding:64px 52px;display:flex;flex-direction:column;justify-content:center;}
+.pc-tag{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.pc-tag::before{content:'';width:28px;height:1.5px;background:var(--gold);}
+.pc-name{font-family:var(--serif);font-size:clamp(2.5rem,5vw,5rem);font-weight:600;color:var(--white);line-height:.95;letter-spacing:-.02em;margin-bottom:6px;}
+.pc-name span{color:var(--gold);}
+.pc-sub{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--gold);margin-bottom:22px;}
+.pc-desc{font-size:.95rem;color:#aaa;line-height:1.85;font-weight:300;max-width:440px;margin-bottom:28px;}
+.pc-feats{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.pf{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#ccc;font-weight:300;line-height:1.5;}
+.pf::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+.pc-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.pc-visual{background:var(--off);display:flex;align-items:center;justify-content:center;padding:56px 40px;position:relative;overflow:hidden;}
+.pc-visual::before{content:'ADFLOW';position:absolute;bottom:-20px;right:-10px;font-family:var(--serif);font-size:clamp(80px,12vw,160px);font-weight:700;color:var(--black);opacity:.04;pointer-events:none;}
+.mockup{background:var(--white);border:1px solid var(--border);box-shadow:0 24px 80px rgba(0,0,0,.12);width:100%;max-width:380px;border-radius:4px;overflow:hidden;}
+.mock-bar{background:#1a1a1a;padding:10px 14px;display:flex;align-items:center;gap:8px;}
+.mock-dot{width:10px;height:10px;border-radius:50%;}
+.mock-url{flex:1;background:#2a2a2a;border-radius:3px;padding:4px 10px;font-size:.65rem;color:#666;margin:0 10px;}
+.mock-body{padding:24px;}
+.mock-logo{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--gold);margin-bottom:14px;letter-spacing:.1em;}
+.mock-h{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--black);margin-bottom:8px;}
+.mock-sub{font-size:.75rem;color:var(--gray);margin-bottom:14px;line-height:1.6;}
+.mock-btn{background:var(--gold);color:var(--black);font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:8px 16px;display:inline-block;margin-bottom:14px;}
+.mock-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.mock-stat{background:var(--off);padding:10px 8px;text-align:center;}
+.mock-stat .mn{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--gold);}
+.mock-stat .ml{font-size:.58rem;color:var(--gray);letter-spacing:.08em;text-transform:uppercase;}
+
+/* CLIENTS */
+.logos-row{display:flex;flex-wrap:wrap;align-items:center;gap:32px;padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:48px;}
+.logo-it{opacity:.55;transition:all .3s;filter:grayscale(1);}
+.logo-it:hover{opacity:1;filter:none;}
+.logo-it img{height:44px;width:auto;object-fit:contain;}
+.cl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);}
+.cc{background:var(--white);padding:34px;transition:background .3s;}
+.cc:hover{background:var(--off);}
+.cc-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px;}
+.cc-ava{width:48px;height:48px;background:var(--off);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--gold);flex-shrink:0;overflow:hidden;}
+.cc-ava img{width:100%;height:100%;object-fit:contain;padding:4px;}
+.cc-cat{font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.cc-name{font-family:var(--serif);font-size:1.25rem;font-weight:500;line-height:1.2;}
+.cc-desc{font-size:.87rem;color:var(--gray);line-height:1.75;font-weight:300;margin-bottom:12px;}
+.cc-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.cc-tag{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);color:var(--gray);}
+
+/* RESULTS */
+.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:52px;}
+.rs{background:var(--white);padding:30px 22px;}
+.rs-plat{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.rs-plat::before{content:'';width:14px;height:1.5px;background:var(--gold);}
+.rs-num{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--black);line-height:1;margin-bottom:4px;}
+.rs-num span{color:var(--gold);}
+.rs-from{font-size:.72rem;color:var(--gray);margin-bottom:8px;}
+.rs-bar{height:2.5px;background:var(--border);border-radius:2px;margin-bottom:8px;}
+.rs-bar div{height:2.5px;background:linear-gradient(to right,var(--gold),var(--gold2));border-radius:2px;}
+.rs-desc{font-size:.79rem;color:var(--gray);line-height:1.65;font-weight:300;}
+.rf-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;}
+.rf-col{display:flex;flex-direction:column;gap:16px;}
+.img-card{overflow:hidden;border:1px solid var(--border);position:relative;transition:box-shadow .3s,transform .3s;}
+.img-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-2px);}
+.img-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.img-card:hover img{transform:scale(1.03);}
+.ic-badge{position:absolute;top:14px;right:14px;background:var(--gold);color:var(--black);font-family:var(--serif);font-size:1.1rem;font-weight:600;padding:8px 12px;line-height:1;text-align:center;}
+.iph-row{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;justify-items:center;}
+.iph-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.iph{position:relative;width:175px;background:#111;border-radius:36px;padding:14px 10px 18px;box-shadow:0 0 0 1.5px #333,0 0 0 3px #1a1a1a,0 24px 60px rgba(0,0,0,.25);}
+.iph::before{content:'';position:absolute;left:-3px;top:72px;width:3px;height:28px;background:#2a2a2a;border-radius:2px 0 0 2px;box-shadow:0 36px 0 #2a2a2a,0 66px 0 #2a2a2a;}
+.iph::after{content:'';position:absolute;right:-3px;top:96px;width:3px;height:40px;background:#2a2a2a;border-radius:0 2px 2px 0;}
+.iph:hover{box-shadow:0 0 0 1.5px #c9a84c,0 0 0 3px #a8882e44,0 28px 70px rgba(0,0,0,.3);transition:box-shadow .3s;}
+.iph-notch{width:70px;height:22px;background:#111;border-radius:0 0 14px 14px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;gap:5px;}
+.iph-notch::before{content:'';width:7px;height:7px;background:#222;border-radius:50%;border:1.5px solid #333;}
+.iph-notch::after{content:'';width:3px;height:3px;background:#1a3a4a;border-radius:50%;}
+.iph-screen{width:100%;aspect-ratio:9/19.5;background:#1a1a1a;border-radius:20px;overflow:hidden;}
+.iph-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.iph-home{width:32px;height:4px;background:#333;border-radius:3px;margin:8px auto 0;}
+.iph-lbl{font-size:.63rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);text-align:center;}
+.wins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+
+/* TESTIMONIALS */
+.tt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.tt{background:var(--white);padding:36px 28px;transition:background .3s;}
+.tt:hover{background:var(--off);}
+.tt-q{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.tt-body{font-family:var(--serif);font-size:1.08rem;font-weight:300;font-style:italic;line-height:1.75;color:var(--black);margin-bottom:18px;}
+.tt-stars{color:var(--gold);font-size:.82rem;letter-spacing:2px;margin-bottom:14px;}
+.tt-auth{display:flex;align-items:center;gap:11px;padding-top:14px;border-top:1px solid var(--border);}
+.tt-ava{width:36px;height:36px;border-radius:50%;background:var(--off);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--gold);flex-shrink:0;border:1.5px solid var(--border);}
+.tt-name{font-size:.86rem;font-weight:600;}
+.tt-role{font-size:.7rem;color:var(--gray);}
+
+/* CTA */
+.cta-ban{padding:100px 0;text-align:center;background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.cta-ban::before{content:'ADORA';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:22vw;font-weight:700;color:var(--black);opacity:.025;pointer-events:none;user-select:none;}
+.cta-h{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;color:var(--black);line-height:1.05;margin-bottom:14px;position:relative;}
+.cta-h em{font-style:italic;color:var(--gold);}
+.cta-sub{font-size:1rem;color:var(--gray);max-width:460px;margin:0 auto 36px;line-height:1.8;font-weight:300;position:relative;}
+.cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;position:relative;}
+
+/* CONTACT */
+.con-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:start;}
+.con-form{display:flex;flex-direction:column;gap:14px;}
+.con-form input,.con-form textarea,.con-form select{width:100%;background:var(--off);border:1.5px solid var(--border);padding:14px 16px;font-family:var(--sans);font-size:.88rem;color:var(--black);outline:none;transition:border-color .3s;resize:none;}
+.con-form input:focus,.con-form textarea:focus,.con-form select:focus{border-color:var(--gold);}
+.con-form textarea{min-height:120px;}
+.cd-label{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.s-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.s-row:hover .s-name{color:var(--gold);}
+.s-row:hover .s-ico{border-color:var(--gold);}
+.s-ico{width:36px;height:36px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s;}
+.s-name{font-size:.88rem;color:var(--gray);transition:color .2s;}
+
+/* FOOTER */
+footer{background:var(--black);padding:64px 0 32px;}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.f-logo{font-family:var(--serif);font-size:2rem;font-weight:600;letter-spacing:.1em;color:var(--white);margin-bottom:8px;}
+.f-logo span{color:var(--gold);}
+.f-tagline{font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--gold);margin-bottom:12px;}
+.f-desc{font-size:.82rem;color:#666;line-height:1.75;font-weight:300;}
+.f-col-title{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#555;margin-bottom:14px;}
+.f-links{display:flex;flex-direction:column;gap:10px;}
+.f-links a{font-size:.85rem;color:#666;transition:color .2s;}
+.f-links a:hover{color:var(--gold);}
+.foot-bot{padding-top:24px;border-top:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.foot-copy{font-size:.76rem;color:#444;}
+.divider{height:1px;background:var(--border);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .ab-grid,.con-grid{grid-template-columns:1fr;}
+  .product-card{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .rs-grid{grid-template-columns:repeat(2,1fr);}
+  .iph-row{grid-template-columns:repeat(2,1fr);}
+  .tt-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .cl-grid{grid-template-columns:1fr;}
+  .rf-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  :root{--nav:62px;}
+  .n-links,.n-cta{display:none;}
+  .hbg{display:flex;}
+  .sec{padding:72px 0;}
+  .svc-grid{grid-template-columns:1fr;}
+  .rs-grid{grid-template-columns:1fr 1fr;}
+  .iph-row{grid-template-columns:repeat(2,1fr);gap:16px;}
+  .iph{width:148px;}
+  .h-btns{flex-direction:column;gap:10px;}
+  .h-btns .btn{justify-content:center;}
+  .wins-grid{grid-template-columns:1fr 1fr;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .cta-btns .btn{width:100%;max-width:320px;justify-content:center;}
+  .foot-grid{grid-template-columns:1fr;}
+  .pc-btns{flex-direction:column;}
+  .logos-row{gap:20px;}
+}
+@media(max-width:480px){
+  .h-mega{font-size:3.2rem;}
+  .wrap{padding:0 1.2rem;}
+  .rs-grid{grid-template-columns:1fr;}
+  .wins-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#hero" class="n-logo">ADORA<span>.</span></a>
+    <div class="n-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#adflow" class="gold">AdFlow ✦</a>
+      <a href="#clients">Clients</a>
+      <a href="#results">Results</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="packages.html">Packages</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="https://wa.me/2348160115671" target="_blank" class="n-cta">Let's Work</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#services" onclick="cm()">Services</a>
+  <a href="#adflow" onclick="cm()" style="color:var(--gold);">AdFlow ✦</a>
+  <a href="#clients" onclick="cm()">Clients</a>
+  <a href="#results" onclick="cm()">Results</a>
+  <a href="#testimonials" onclick="cm()">Testimonials</a>
+  <a href="packages.html" onclick="cm()">Packages</a>
+  <a href="portfolio.html" onclick="cm()">Portfolio</a>
+  <a href="#contact" onclick="cm()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-ghost">ADORA</div>
+  <div class="wrap">
+    <div style="padding:72px 0 60px;">
+      <div class="ey rv"><span class="ey-line"></span><span class="ey-text">Social Media · Video · Advertising</span></div>
+      <h1 class="h-mega rv d1">We Build <em>Brands</em><br>That Win.</h1>
+      <p class="h-tagline rv d2">"We will build your brand you'd wish you met us earlier."</p>
+      <p class="h-sub rv d2">ADORA Digital Agency is a premium digital marketing, content creation, and paid advertising agency helping corporate brands and personal empires command attention and drive real revenue.</p>
+      <div class="h-btns rv d3">
+        <a href="https://wa.me/2348160115671" target="_blank" class="btn btn-dk">Work With Us →</a>
+        <a href="#results" class="btn btn-gh">See Our Results</a>
+        <a href="portfolio.html" class="btn btn-gh">View Portfolio</a>
+        <a href="packages.html" class="btn btn-gd">Our Packages</a>
+      </div>
+      <div class="h-stats rv d4">
+        <div><div class="sn">10<span>+</span></div><div class="sl">Brands Managed</div></div>
+        <div><div class="sn">9<span>×</span></div><div class="sl">LinkedIn Growth</div></div>
+        <div><div class="sn">42<span>×</span></div><div class="sl">Instagram Views</div></div>
+        <div><div class="sn">1K<span>+</span></div><div class="sl">Leads Generated</div></div>
+        <div><div class="sn">0</div><div class="sl">Hidden Fees</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="t-track">
+    <span class="ti">Social Media Management <span class="dot">✦</span></span>
+    <span class="ti">Paid Advertising <span class="dot">✦</span></span>
+    <span class="ti">Short Video Editing <span class="dot">✦</span></span>
+    <span class="ti">Content Creation <span class="dot">✦</span></span>
+    <span class="ti">Brand Strategy <span class="dot">✦</span></span>
+    <span class="ti">Community Management <span class="dot">✦</span></span>
+    <span class="ti">Analytics &amp; Reporting <span class="dot">✦</span></span>
+    <span class="ti">AdFlow Platform <span class="dot">✦</span></span>
+    <span class="ti">Social Media Management <span class="dot">✦</span></span>
+    <span class="ti">Paid Advertising <span class="dot">✦</span></span>
+    <span class="ti">Short Video Editing <span class="dot">✦</span></span>
+    <span class="ti">Content Creation <span class="dot">✦</span></span>
+    <span class="ti">Brand Strategy <span class="dot">✦</span></span>
+    <span class="ti">Community Management <span class="dot">✦</span></span>
+    <span class="ti">Analytics &amp; Reporting <span class="dot">✦</span></span>
+    <span class="ti">AdFlow Platform <span class="dot">✦</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="sec" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="ab-grid">
+      <div class="rv">
+        <div style="position:relative;">
+          <img src="https://i.ibb.co/27Jxh7xM/id-web.jpg" alt="Bariadora Johnson — Founder, ADORA Digital Agency" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;"/>
+          <div class="ab-badge" style="position:absolute;bottom:-20px;right:-20px;">
+            <div class="num">10<span style="color:var(--gold);font-size:1.5rem;">+</span></div>
+            <div class="lbl">Brands Managed</div>
+          </div>
+        </div>
+      </div>
+      <div class="rv d1" style="padding-top:20px;">
+        <div class="ey"><span class="ey-line"></span><span class="ey-text">About ADORA</span></div>
+        <h2 class="h-sec">Built to Make <em>Brands</em> Unforgettable.</h2>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.85;font-weight:300;margin-top:16px;">ADORA Digital Agency was founded with one conviction — that every brand deserves to be seen, heard, and remembered. We are a digital marketing and content agency that helps businesses and personal brands grow with strategy, storytelling, and results that actually move the needle.</p>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.85;font-weight:300;margin-top:12px;margin-bottom:28px;">From Ibadan, Nigeria — serving brands across Nigeria, the United States, and beyond.</p>
+        <div style="border-top:1px solid var(--border);">
+          <div class="val-row"><div class="val-num">01</div><div class="val-text"><h4>Strategy First</h4><p>Every campaign starts with a clear plan built around your goals, audience, and brand voice.</p></div></div>
+          <div class="val-row"><div class="val-num">02</div><div class="val-text"><h4>Content That Converts</h4><p>We create content that doesn't just look good — it drives engagement, builds trust, and generates revenue.</p></div></div>
+          <div class="val-row"><div class="val-num">03</div><div class="val-text"><h4>Transparent Results</h4><p>No vanity metrics. We report the numbers that actually matter to your business growth.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="sec sec-alt" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:48px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text">What We Do</span></div>
+      <h2 class="h-sec">Our <em>Services</em></h2>
+      <p class="sec-sub">Premium services for brands that take their presence seriously.</p>
+    </div>
+    <div class="svc-grid rv">
+      <div class="svc"><div class="svc-icon">📱</div><div class="svc-num">01</div><h3 class="svc-name">Social Media Management</h3><p class="svc-desc">End-to-end management of your social media presence — content, scheduling, community engagement, and monthly performance reporting. We run your platforms so you can run your business.</p><div class="svc-tags"><span class="svc-tag">Instagram</span><span class="svc-tag">LinkedIn</span><span class="svc-tag">TikTok</span><span class="svc-tag">Facebook</span><span class="svc-tag">X</span></div></div>
+      <div class="svc"><div class="svc-icon">🎯</div><div class="svc-num">02</div><h3 class="svc-name">Paid Advertising</h3><p class="svc-desc">Strategic paid campaigns engineered to generate qualified leads and deliver real ROI. All campaigns run through your own ad accounts — full transparency, full ownership of your data.</p><div class="svc-tags"><span class="svc-tag">Meta Ads</span><span class="svc-tag">TikTok Ads</span><span class="svc-tag">Lead Generation</span><span class="svc-tag">ROI Tracking</span></div></div>
+      <div class="svc"><div class="svc-icon">🎬</div><div class="svc-num">03</div><h3 class="svc-name">Short Video Editing</h3><p class="svc-desc">Professional short-form video editing for Reels, TikToks, and YouTube Shorts. We cut, caption, brand, and optimise your video content for maximum reach on every platform.</p><div class="svc-tags"><span class="svc-tag">Reels</span><span class="svc-tag">TikTok</span><span class="svc-tag">Shorts</span><span class="svc-tag">Captions &amp; Overlays</span></div></div>
+      <div class="svc"><div class="svc-icon">✍🏾</div><div class="svc-num">04</div><h3 class="svc-name">Content Creation</h3><p class="svc-desc">High-quality, on-brand content designed to stop the scroll, spark conversation, and drive action — consistently and at scale. Built specifically for your audience.</p><div class="svc-tags"><span class="svc-tag">Copywriting</span><span class="svc-tag">Graphics</span><span class="svc-tag">Carousels</span><span class="svc-tag">Content Calendar</span></div></div>
+      <div class="svc"><div class="svc-icon">🧭</div><div class="svc-num">05</div><h3 class="svc-name">Brand Strategy</h3><p class="svc-desc">A clear, purposeful strategy tailored to your brand's unique voice and objectives. We research your audience, define your content pillars, and build a roadmap that positions you as the authority.</p><div class="svc-tags"><span class="svc-tag">Brand Voice</span><span class="svc-tag">Content Pillars</span><span class="svc-tag">Audience Research</span><span class="svc-tag">Positioning</span></div></div>
+      <div class="svc"><div class="svc-icon">📊</div><div class="svc-num">06</div><h3 class="svc-name">Analytics &amp; Reporting</h3><p class="svc-desc">Transparent monthly reports covering reach, engagement, follower growth, ad performance, and what we are doing next to keep improving. You always know what your investment is doing.</p><div class="svc-tags"><span class="svc-tag">Monthly Reports</span><span class="svc-tag">Growth Tracking</span><span class="svc-tag">Ad Analytics</span><span class="svc-tag">Competitor Analysis</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:36px;" class="rv"><a href="packages.html" class="btn btn-dk">View Our Packages →</a></div>
+  </div>
+</section>
+
+<!-- ADFLOW -->
+<section id="adflow" style="padding:96px 0;scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:36px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text">Our Product</span></div>
+      <h2 class="h-sec">Introducing <em>AdFlow</em></h2>
+    </div>
+  </div>
+  <div class="product-card rv">
+    <div class="pc-content">
+      <p class="pc-tag">Built by ADORA Digital Agency</p>
+      <h2 class="pc-name">Ad<span>Flow</span></h2>
+      <p class="pc-sub">Run professional ads. Keep more of your money.</p>
+      <p class="pc-desc">AdFlow is a platform that helps business owners run professional Facebook and Instagram (Meta) ads automatically — without paying expensive agency fees. Choose a plan, connect your ad account, set up your product or service, and start running campaigns yourself.</p>
+      <div class="pc-feats">
+        <div class="pf">Connect your Facebook and Instagram ad account in minutes</div>
+        <div class="pf">Set up your product or service and launch campaigns yourself</div>
+        <div class="pf">Professional ad campaigns without expensive agency fees</div>
+        <div class="pf">Put more of your budget directly into reaching real customers</div>
+        <div class="pf">Built for Nigerian business owners and growing brands</div>
+      </div>
+      <div class="pc-btns">
+        <a href="https://www.theadflowapp.com" target="_blank" class="btn btn-gd">Visit AdFlow →</a>
+        <a href="https://www.theadflowapp.com" target="_blank" class="btn btn-wh">Learn More</a>
+      </div>
+    </div>
+    <div class="pc-visual">
+      <div class="mockup">
+        <div class="mock-bar">
+          <span class="mock-dot" style="background:#ff5f57;"></span>
+          <span class="mock-dot" style="background:#febc2e;"></span>
+          <span class="mock-dot" style="background:#28c840;"></span>
+          <span class="mock-url">theadflowapp.com</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-logo">AdFlow.</div>
+          <h3 class="mock-h">Run Ads Like a Pro.<br>Pay Like a Boss.</h3>
+          <p class="mock-sub">Launch professional Meta ads without agency fees. More budget for customers, less for middlemen.</p>
+          <div class="mock-btn">Get Started Free →</div>
+          <div class="mock-stats">
+            <div class="mock-stat"><div class="mn">60K+</div><div class="ml">Reach</div></div>
+            <div class="mock-stat"><div class="mn">₦84</div><div class="ml">Cost/Lead</div></div>
+            <div class="mock-stat"><div class="mn">1K+</div><div class="ml">Leads</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients" class="sec sec-alt" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:48px;" class="rv">
+      <div>
+        <div class="ey"><span class="ey-line"></span><span class="ey-text">Our Clients</span></div>
+        <h2 class="h-sec">Brands We've <em>Elevated</em></h2>
+      </div>
+      <div>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;">From corporate institutions to personal powerhouses, across Nigeria, the U.S.A, and beyond.</p>
+        <a href="portfolio.html" class="btn btn-dk" style="margin-top:20px;display:inline-flex;">View Full Portfolio →</a>
+      </div>
+    </div>
+    <div class="logos-row rv">
+      <div class="logo-it"><img src="https://i.ibb.co/Kc1mmYFr/luaa-logo.jpg" alt="Landmark University Alumni Association"/></div>
+      <div class="logo-it"><img src="https://i.ibb.co/yFRbxggJ/landnest-logo.jpg" alt="Landnest Homes"/></div>
+      <div class="logo-it"><img src="https://i.ibb.co/FLRr7yVd/beyofi-logo.jpg" alt="BeYofi World"/></div>
+      <div class="logo-it"><img src="https://i.ibb.co/j9xTJ1KL/east-soul.png" alt="East Soul Restaurant"/></div>
+      <div class="logo-it"><img src="https://i.ibb.co/60C9827G/brandgeko-logo.jpg" alt="Brandgeko Digital Agency"/></div>
+    </div>
+    <div class="cl-grid rv">
+      <div class="cc"><div class="cc-head"><div class="cc-ava"><img src="https://i.ibb.co/yFRbxggJ/landnest-logo.jpg" alt="Landnest"/></div><div><p class="cc-cat">Real Estate</p><h3 class="cc-name">Landnest Homes &amp; Properties</h3></div></div><p class="cc-desc">Built and managed full social media presence and ran targeted sponsored ads generating over 1,000 qualified property leads for this growing real estate company.</p><div class="cc-tags"><span class="cc-tag">Social Media</span><span class="cc-tag">Lead Gen</span><span class="cc-tag">Paid Ads</span></div></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava"><img src="https://i.ibb.co/j9xTJ1KL/east-soul.png" alt="East Soul"/></div><div><p class="cc-cat">Hospitality · Garland, Texas</p><h3 class="cc-name">East Soul Restaurant &amp; Lounge</h3></div></div><p class="cc-desc">Managed full social presence for this upscale Texas dining experience, building an aspirational brand that drove reservations and loyal repeat guests.</p><div class="cc-tags"><span class="cc-tag">Social Media</span><span class="cc-tag">Content</span><span class="cc-tag">Community</span></div></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava"><img src="https://i.ibb.co/FLRr7yVd/beyofi-logo.jpg" alt="BeYofi"/></div><div><p class="cc-cat">Beauty &amp; Tech · Georgia, U.S.A</p><h3 class="cc-name">BeYofi World</h3></div></div><p class="cc-desc">Crafted brand positioning and full content direction, helping BeYofi connect with their audience, stand out in a competitive space, and build a loyal community.</p><div class="cc-tags"><span class="cc-tag">Brand Strategy</span><span class="cc-tag">Content</span><span class="cc-tag">Community</span></div></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava"><img src="https://i.ibb.co/Kc1mmYFr/luaa-logo.jpg" alt="LUAA"/></div><div><p class="cc-cat">Alumni Association</p><h3 class="cc-name">Landmark University Alumni Association</h3></div></div><p class="cc-desc">Managed social presence and brand communications for one of Nigeria's most respected university alumni communities, connecting graduates and amplifying impact.</p><div class="cc-tags"><span class="cc-tag">Social Media</span><span class="cc-tag">Brand Comms</span><span class="cc-tag">Community</span></div></div>
+    </div>
+    <!-- Personal brands -->
+    <div style="margin-top:28px;padding:32px;background:var(--white);border:1px solid var(--border);" class="rv">
+      <p style="font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Personal Brands</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);">
+        <div style="background:var(--white);padding:18px 20px;"><p style="font-size:.85rem;font-weight:600;margin-bottom:3px;">Dr Olusola Areo</p><p style="font-size:.75rem;color:var(--gray);">Real Estate Pro &amp; Entrepreneur</p></div>
+        <div style="background:var(--white);padding:18px 20px;"><p style="font-size:.85rem;font-weight:600;margin-bottom:3px;">Mrs Elsie Akpabio</p><p style="font-size:.75rem;color:var(--gray);">General Counsel</p></div>
+        <div style="background:var(--white);padding:18px 20px;"><p style="font-size:.85rem;font-weight:600;margin-bottom:3px;">Mrs Ibitomi Osunsedo</p><p style="font-size:.75rem;color:var(--gray);">Regional Director, West Africa — KAPLAN</p></div>
+        <div style="background:var(--white);padding:18px 20px;"><p style="font-size:.85rem;font-weight:600;margin-bottom:3px;">Mrs Ayoola Senbajo FCIArb (UK)</p><p style="font-size:.75rem;color:var(--gray);">Dispute Resolution Expert</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="sec" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:52px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text">Proof of Work</span></div>
+      <h2 class="h-sec">Real Results. <em>Real Impact.</em></h2>
+      <p class="sec-sub">Numbers are great. Screenshots are better. A transparent look at what we have actually achieved.</p>
+    </div>
+    <div class="rs-grid rv">
+      <div class="rs"><p class="rs-plat">LinkedIn Growth</p><div class="rs-num">3,600<span>+</span></div><p class="rs-from">Up from 400 followers</p><div class="rs-bar"><div style="width:90%;"></div></div><p class="rs-desc">Personal brand grown in 12 months through strategic thought leadership content.</p></div>
+      <div class="rs"><p class="rs-plat">Instagram Views</p><div class="rs-num">34K<span>+</span></div><p class="rs-from">Up from 800 views</p><div class="rs-bar"><div style="width:97%;"></div></div><p class="rs-desc">Reels views scaled 42× through targeted content strategy and reels optimisation.</p></div>
+      <div class="rs"><p class="rs-plat">Lead Generation</p><div class="rs-num">1,000<span>+</span></div><p class="rs-from">Single campaign</p><div class="rs-bar"><div style="width:88%;"></div></div><p class="rs-desc">Over 1,000 qualified leads from a single food business lead generation campaign.</p></div>
+      <div class="rs"><p class="rs-plat">Cost Per Lead</p><div class="rs-num">₦84</div><p class="rs-from">Average CPL achieved</p><div class="rs-bar"><div style="width:80%;"></div></div><p class="rs-desc">Consistently driving leads at ₦84 average cost per lead across campaigns.</p></div>
+    </div>
+    <div class="rf-grid rv">
+      <div class="img-card" style="min-height:400px;"><img src="https://i.ibb.co/3Y1RBHvg/ad-1.jpg" alt="Ad Campaign Result" style="min-height:400px;"/><div class="ic-badge">700+<br><span style="font-size:.5rem;font-family:var(--sans);font-weight:500;">LEADS</span></div></div>
+      <div class="rf-col">
+        <div class="img-card" style="flex:1;min-height:190px;"><img src="https://i.ibb.co/QvxT4775/ad-2.jpg" alt="Ad Result 2" style="min-height:190px;"/></div>
+        <div class="img-card" style="flex:1;min-height:190px;"><img src="https://i.ibb.co/WNTCsQSQ/ad-3.jpg" alt="Ad Result 3" style="min-height:190px;"/></div>
+      </div>
+    </div>
+    <!-- LinkedIn -->
+    <div style="margin-top:56px;" class="rv">
+      <div class="ey" style="margin-bottom:26px;"><span class="ey-line"></span><span class="ey-text">LinkedIn Results</span></div>
+      <div class="iph-row">
+        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/F1h4tfS/link-1.png" alt="LinkedIn 1"/></div><div class="iph-home"></div></div><p class="iph-lbl">Post Impressions</p></div>
+        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/ycVWn4VK/link-2.png" alt="LinkedIn 2"/></div><div class="iph-home"></div></div><p class="iph-lbl">Post Impressions</p></div>
+        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/Y78jNWcd/link-3.png" alt="LinkedIn 3"/></div><div class="iph-home"></div></div><p class="iph-lbl">Post Impressions</p></div>
+        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/5WFbx9r9/link-4.png" alt="LinkedIn 4"/></div><div class="iph-home"></div></div><p class="iph-lbl">Post Impressions</p></div>
+      </div>
+    </div>
+    <!-- Instagram -->
+    <div style="margin-top:56px;" class="rv">
+      <div class="ey" style="margin-bottom:26px;"><span class="ey-line"></span><span class="ey-text">Instagram Results</span></div>
+      <div style="display:flex;justify-content:center;gap:56px;flex-wrap:wrap;">
+        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/Ng0bXBQs/reel-1.jpg" alt="Instagram 1"/></div><div class="iph-home"></div></div></div>
+        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/nGRHcW1/reel-2.jpg" alt="Instagram 2"/></div><div class="iph-home"></div></div></div>
+      </div>
+    </div>
+    <!-- Wins -->
+    <div style="margin-top:56px;" class="rv">
+      <div class="ey" style="margin-bottom:26px;"><span class="ey-line"></span><span class="ey-text">Additional Wins</span></div>
+      <div class="wins-grid">
+        <div class="img-card"><img src="https://i.ibb.co/RkFHD4py/win-1.jpg" alt="Win 1" style="min-height:220px;"/></div>
+        <div class="img-card"><img src="https://i.ibb.co/fGntq44b/win-2.jpg" alt="Win 2" style="min-height:220px;"/></div>
+        <div class="img-card"><img src="https://i.ibb.co/QFQYWrXj/win-3.jpg" alt="Win 3" style="min-height:220px;"/></div>
+        <div class="img-card"><img src="https://i.ibb.co/LXcnBWjw/win-4.jpg" alt="Win 4" style="min-height:220px;"/></div>
+        <div class="img-card"><img src="https://i.ibb.co/9HMKmcs4/win-5.jpg" alt="Win 5" style="min-height:220px;"/></div>
+        <div class="img-card"><img src="https://i.ibb.co/k6v7phPT/win-6.jpg" alt="Win 6" style="min-height:220px;"/></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="sec sec-alt" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:48px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text">Client Love</span></div>
+      <h2 class="h-sec">What They <em>Say</em></h2>
+    </div>
+    <div class="tt-grid rv">
+      <div class="tt"><p class="tt-q">"</p><p class="tt-body">Working with ADORA completely transformed how our brand shows up online. In just a few months, our engagement grew and we started attracting exactly the right people.</p><p class="tt-stars">★★★★★</p><div class="tt-auth"><div class="tt-ava">S</div><div><p class="tt-name">Mrs Sandra</p><p class="tt-role">CEO, East Soul Restaurant &amp; Lounge</p></div></div></div>
+      <div class="tt"><p class="tt-q">"</p><p class="tt-body">I had no idea how powerful a well-managed personal brand could be until ADORA took over. My audience grew, opportunities increased, and my online presence finally matched the quality of my work.</p><p class="tt-stars">★★★★★</p><div class="tt-auth"><div class="tt-ava">E</div><div><p class="tt-name">Mrs Elsie Akpabio</p><p class="tt-role">General Counsel</p></div></div></div>
+      <div class="tt"><p class="tt-q">"</p><p class="tt-body">The strategy ADORA delivered was thorough, creative, and most importantly, it worked. Our social channels now consistently drive real business inquiries. We wouldn't work with anyone else.</p><p class="tt-stars">★★★★★</p><div class="tt-auth"><div class="tt-ava">B</div><div><p class="tt-name">BeYofi World</p><p class="tt-role">Beauty &amp; Tech Brand, Georgia, U.S.A</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-ban">
+  <div class="wrap">
+    <h2 class="cta-h rv">Ready to Build Something <em>Great?</em></h2>
+    <p class="cta-sub rv d1">Let's talk about your brand and what you're trying to achieve. We respond within 24 hours.</p>
+    <div class="cta-btns rv d2">
+      <a href="https://wa.me/2348160115671" target="_blank" class="btn btn-dk">WhatsApp Us →</a>
+      <a href="mailto:adoradigitalagency7@gmail.com" class="btn btn-gh">Send an Email</a>
+      <a href="packages.html" class="btn btn-gd">View Packages</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="sec" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:48px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text">Get In Touch</span></div>
+      <h2 class="h-sec">Let's <em>Connect</em></h2>
+    </div>
+    <div class="con-grid">
+      <div class="rv">
+        <form class="con-form" action="https://formspree.io/f/mdablood" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required/>
+          <input type="email" name="email" placeholder="Your Email" required/>
+          <input type="text" name="brand" placeholder="Your Brand / Company"/>
+          <select name="service">
+            <option value="" disabled selected>Service you're interested in</option>
+            <option>Social Media Management</option>
+            <option>Paid Advertising</option>
+            <option>Short Video Editing</option>
+            <option>Content Creation</option>
+            <option>Brand Strategy</option>
+            <option>AdFlow Platform</option>
+            <option>Full Package</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your brand and goals..."></textarea>
+          <button type="submit" class="btn btn-dk" style="justify-content:center;border:none;">Send Message →</button>
+        </form>
+      </div>
+      <div class="rv d1" style="display:flex;flex-direction:column;gap:26px;">
+        <div><p class="cd-label">Email</p><p style="font-size:.95rem;"><a href="mailto:adoradigitalagency7@gmail.com" style="transition:color .2s;">adoradigitalagency7@gmail.com</a></p></div>
+        <div><p class="cd-label">WhatsApp</p><p style="font-size:.95rem;"><a href="https://wa.me/2348160115671" target="_blank">+234 816 011 5671</a></p></div>
+        <div><p class="cd-label">Website</p><p style="font-size:.95rem;"><a href="https://adoradigitalagency.com">adoradigitalagency.com</a></p></div>
+        <div>
+          <p class="cd-label" style="margin-bottom:14px;">Our Socials</p>
+          <a href="https://instagram.com/adoradigitalagency" target="_blank" class="s-row"><div class="s-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="#c9a84c" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="#c9a84c" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#c9a84c"/></svg></div><span class="s-name">adoradigitalagency</span></a>
+          <a href="https://tiktok.com/@adoradigitalagency" target="_blank" class="s-row"><div class="s-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="#c9a84c"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/></svg></div><span class="s-name">adoradigitalagency</span></a>
+          <a href="https://twitter.com/adoradigitalagency" target="_blank" class="s-row"><div class="s-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="#c9a84c"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div><span class="s-name">adoradigitalagency</span></a>
+          <a href="https://facebook.com/adoradigitalagency" target="_blank" class="s-row"><div class="s-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="s-name">adoradigitalagency</span></a>
+          <a href="https://linkedin.com/company/adoradigitalagency" target="_blank" class="s-row"><div class="s-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#c9a84c" stroke-width="1.8"/><path d="M7 10v7M7 7v.5M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="s-name">adoradigitalagency</span></a>
+        </div>
+        <div style="padding:18px 20px;background:var(--off);border-left:3px solid var(--gold);"><p style="font-size:.82rem;color:var(--gray);line-height:1.7;font-weight:300;">RC: 9536894 · Ibadan, Nigeria · Serving brands globally</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="f-logo">ADORA<span>.</span></div>
+        <p class="f-tagline">"We will build your brand you'd wish you met us earlier."</p>
+        <p class="f-desc">Premium digital marketing, paid advertising, and video editing for brands that refuse to blend in. RC: 9536894</p>
+      </div>
+      <div>
+        <p class="f-col-title">Navigation</p>
+        <div class="f-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#adflow">AdFlow ✦</a>
+          <a href="#clients">Clients</a>
+          <a href="#results">Results</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="f-col-title">Pages</p>
+        <div class="f-links">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="packages.html">Packages</a>
+          <a href="https://www.theadflowapp.com" target="_blank">AdFlow App ↗</a>
+        </div>
+      </div>
+      <div>
+        <p class="f-col-title">Contact</p>
+        <div class="f-links">
+          <a href="mailto:adoradigitalagency7@gmail.com">adoradigitalagency7@gmail.com</a>
+          <a href="https://wa.me/2348160115671" target="_blank">+234 816 011 5671</a>
+          <a href="https://instagram.com/adoradigitalagency" target="_blank">@adoradigitalagency</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p class="foot-copy">© 2025 ADORA Digital Agency. All rights reserved.</p>
+      <p class="foot-copy" style="font-family:var(--serif);font-style:italic;color:#333;">Strategy. Story. Sales.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const prog=document.getElementById("prog"),nav=document.getElementById("nav");
+let ls=0,nh=false;
+window.addEventListener("scroll",()=>{
+  const sy=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;
+  prog.style.width=(sy/dh*100)+"%";
+  nav.classList.toggle("sc",sy>50);
+  if(sy>200){if(sy>ls+8&&!nh){nav.style.transform="translateY(-100%)";nh=true;}else if(sy<ls-4&&nh){nav.style.transform="translateY(0)";nh=false;}}
+  else{nav.style.transform="translateY(0)";nh=false;}
+  ls=sy;
+},{passive:true});
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}});},{threshold:0.07});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+document.querySelectorAll("a[href^='#']").forEach(a=>{a.addEventListener("click",e=>{const t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-72,behavior:"smooth"});}});});
+document.querySelectorAll(".cc,.tt,.svc,.rs").forEach(card=>{card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect(),x=((e.clientX-r.left)/r.width*100).toFixed(1),y=((e.clientY-r.top)/r.height*100).toFixed(1);card.style.background=`radial-gradient(circle at ${x}% ${y}%,#fefcf5 0%,#f9f8f5 60%,#fff 100%)`;});card.addEventListener("mouseleave",()=>{card.style.background="";});});
+const hbg=document.getElementById("hbg"),mob=document.getElementById("mob");
+hbg.addEventListener("click",()=>{hbg.classList.toggle("op");mob.classList.toggle("op");document.body.style.overflow=mob.classList.contains("op")?"hidden":"";});
+function cm(){hbg.classList.remove("op");mob.classList.remove("op");document.body.style.overflow="";}
+</script>
+</body>
+</html>
