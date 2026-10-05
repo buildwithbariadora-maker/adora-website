@@ -249,6 +249,54 @@ footer{background:var(--black);padding:32px 0;}
 }
 .pf-link-btn{border:1.5px solid #c9a84c;color:#c9a84c;font-size:0.7rem;padding:8px 16px;display:inline-flex;align-items:center;letter-spacing:0.12em;text-transform:uppercase;background:transparent;text-decoration:none;margin-top:12px;transition:all 0.3s;}
 .pf-link-btn:hover{background:#c9a84c;color:#0a0a0a;}
+
+/* ════════ HERO BIO ════════ */
+.hero-bio{display:flex;align-items:center;gap:24px;margin-bottom:36px;}
+.hero-bio img{width:110px;height:110px;border-radius:50%;border:2px solid #c9a84c;object-fit:cover;flex-shrink:0;}
+.hb-name{font-family:var(--serif);font-size:2rem;font-weight:500;line-height:1.1;}
+.hb-title{font-size:.85rem;font-weight:500;color:#c9a84c;text-transform:uppercase;letter-spacing:.12em;margin-top:6px;line-height:1.5;}
+.hb-loc{font-size:.8rem;color:var(--gray);margin-top:6px;}
+
+/* ════════ ABOUT ════════ */
+.about{background:#f9f8f5;padding:88px 0;border-top:1px solid var(--border);}
+.about-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:64px;align-items:center;}
+.about-bio{font-size:1rem;line-height:1.9;color:var(--gray);font-weight:300;}
+.about-facts{display:flex;flex-direction:column;gap:28px;}
+.af-n{font-family:var(--serif);font-size:3rem;font-weight:600;color:var(--gold);line-height:1;}
+.af-l{font-family:var(--sans);font-size:.72rem;color:var(--gray);letter-spacing:.12em;text-transform:uppercase;margin-top:6px;}
+
+/* ════════ TOOLS ════════ */
+.tool-group{margin-bottom:32px;}
+.tool-group:last-child{margin-bottom:0;}
+.tool-lbl{font-size:.62rem;font-weight:600;color:#c9a84c;text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px;}
+.tool-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.tool-pill{background:#f9f8f5;border:1.5px solid #e8e4dc;padding:6px 14px;font-size:.72rem;font-weight:500;letter-spacing:.08em;color:#0a0a0a;border-radius:0;}
+
+/* ════════ CERTIFICATIONS ════════ */
+.cert-list{border-top:1px solid var(--border);}
+.cert-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);}
+.cert-name{display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:.9rem;font-weight:600;}
+.cert-name::before{content:'✓';color:#c9a84c;font-weight:700;}
+.cert-meta{font-size:.78rem;color:#c9a84c;white-space:nowrap;}
+
+/* NESG active badge */
+.live-badge{position:absolute;top:20px;right:20px;font-size:.68rem;font-weight:600;color:#22c55e;letter-spacing:.04em;}
+
+/* testimonials: 2 columns, odd last card spans full width */
+.testi-grid{grid-template-columns:repeat(2,1fr);}
+.testi-grid .tt:last-child:nth-child(odd){grid-column:1/-1;}
+
+@media(max-width:1024px){
+  .testi-grid{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;gap:40px;}
+}
+@media(max-width:600px){
+  .hero-bio{flex-direction:column;align-items:flex-start;gap:16px;}
+  .hb-name{font-size:1.7rem;}
+  .cert-row{flex-direction:column;align-items:flex-start;gap:4px;}
+  .about{padding:64px 0;}
+  .live-badge{position:static;display:inline-block;margin-bottom:12px;}
+}
 </style>
 </head>
 
@@ -292,26 +340,51 @@ footer{background:var(--black);padding:32px 0;}
   <div class="hero-ghost">PORTFOLIO</div>
   <div class="wrap">
     <div class="hero-inner">
+      <div class="hero-bio rv">
+        <img src="https://i.ibb.co/27Jxh7xM/id-web.jpg" alt="Bariadora Johnson">
+        <div>
+          <p class="hb-name">Bariadora Johnson</p>
+          <p class="hb-title">Digital Marketing Strategist · Social Media Manager · Paid Advertising Specialist</p>
+          <p class="hb-loc">Ibadan, Nigeria · 3+ Years Experience · Available for Hire</p>
+        </div>
+      </div>
       <div class="hero-eyebrow rv">
         <span class="gl"></span>
         <span class="eyebrow">Social Media Management</span>
       </div>
       <h1 class="h-hero rv d1">
-        I Build Brands<br>People <em>Advocate</em> For.
+        I Build Brands<br>That <em>Grow</em>, Convert,<br>and Win.
       </h1>
       <p class="hero-sub rv d2">
-        This is a curated portfolio of my social media management work, from corporate brands to personal empires. Every result here is real, every number is earned.
+        This is a curated portfolio of my digital marketing work — from building brands from scratch to running paid ad campaigns that generate thousands of qualified leads. Every result here is real. Every number is earned.
       </p>
       <div class="rv d3">
         <a href="#clients" class="btn btn-dk">View My Work →</a>
       </div>
       <!-- Stats -->
       <div class="hero-stats rv d4">
-        <div class="hs"><div class="hs-n">10<span>+</span></div><div class="hs-l">Brands Managed</div></div>
-        <div class="hs"><div class="hs-n">9<span>×</span></div><div class="hs-l">LinkedIn Growth</div></div>
-        <div class="hs"><div class="hs-n">42<span>×</span></div><div class="hs-l">Instagram Views</div></div>
-        <div class="hs"><div class="hs-n">700<span>+</span></div><div class="hs-l">Leads on ₦60K</div></div>
-        <div class="hs"><div class="hs-n">1K<span>+</span></div><div class="hs-l">Real Estate Leads</div></div>
+        <div class="hs"><div class="hs-n">1,010<span>+</span></div><div class="hs-l">Leads, Single Campaign</div></div>
+        <div class="hs"><div class="hs-n">1,000<span>+</span></div><div class="hs-l">Real Estate Leads</div></div>
+        <div class="hs"><div class="hs-n">3,600<span>+</span></div><div class="hs-l">LinkedIn Followers Grown</div></div>
+        <div class="hs"><div class="hs-n">33,853</div><div class="hs-l">Instagram Views (30 Days)</div></div>
+        <div class="hs"><div class="hs-n">6<span>+</span></div><div class="hs-l">Industries Served</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ABOUT ════════ -->
+<section id="about" class="about" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="about-grid rv">
+      <div>
+        <div class="ey-row"><span class="gl"></span><span class="eyebrow">About Me</span></div>
+        <p class="about-bio">I am Bariadora Johnson — a digital marketing strategist and social media manager based in Ibadan, Nigeria. I have spent the last 3+ years building and scaling brands across real estate, hospitality, food, tech, legal, and education sectors. I specialise in paid advertising on Meta and TikTok, organic social media growth, personal brand building, and content strategy. I founded ADORA Digital Agency and built AdFlow — an AI-powered Meta ads platform for small businesses. Every brand I touch gets my full attention, my best strategy, and results I am proud to put my name on.</p>
+      </div>
+      <div class="about-facts">
+        <div><div class="af-n">3+</div><div class="af-l">Years in Digital Marketing</div></div>
+        <div><div class="af-n">10+</div><div class="af-l">Brands Managed</div></div>
+        <div><div class="af-n">6</div><div class="af-l">Industries Served</div></div>
       </div>
     </div>
   </div>
@@ -375,6 +448,54 @@ footer{background:var(--black);padding:32px 0;}
         <p class="what-desc">High-quality, on-brand content designed to stop the scroll, spark conversation, and drive action — consistently and at scale. From captions to reels to graphics, I create content that converts attention into real results.</p>
         <div class="what-tags"><span class="what-tag">Copywriting</span><span class="what-tag">Reels & Videos</span><span class="what-tag">Graphics</span><span class="what-tag">Content Calendar</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════════ TOOLS & PLATFORMS ════════ -->
+<section id="tools" class="sec" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:44px;">
+      <div class="ey-row"><span class="gl"></span><span class="eyebrow">Tools & Platforms</span></div>
+      <h2 class="h-sec">What I <em>Work With</em></h2>
+    </div>
+    <div class="rv">
+      <div class="tool-group">
+        <p class="tool-lbl">Social Media & Content</p>
+        <div class="tool-pills"><span class="tool-pill">Instagram</span><span class="tool-pill">Facebook</span><span class="tool-pill">LinkedIn</span><span class="tool-pill">TikTok</span><span class="tool-pill">Twitter/X</span><span class="tool-pill">YouTube</span></div>
+      </div>
+      <div class="tool-group">
+        <p class="tool-lbl">Advertising & Analytics</p>
+        <div class="tool-pills"><span class="tool-pill">Meta Ads Manager</span><span class="tool-pill">TikTok Ads Manager</span><span class="tool-pill">Google Analytics</span><span class="tool-pill">Google Data Analytics</span></div>
+      </div>
+      <div class="tool-group">
+        <p class="tool-lbl">Creation & Productivity</p>
+        <div class="tool-pills"><span class="tool-pill">Canva</span><span class="tool-pill">CapCut</span><span class="tool-pill">Edits</span><span class="tool-pill">Buffer</span><span class="tool-pill">Brevo</span><span class="tool-pill">Claude AI</span><span class="tool-pill">ChatGPT</span><span class="tool-pill">AI Automation Tools</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════════ CERTIFICATIONS ════════ -->
+<section id="certifications" class="sec" style="scroll-margin-top:68px;">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:44px;">
+      <div class="ey-row"><span class="gl"></span><span class="eyebrow">Certifications</span></div>
+      <h2 class="h-sec">Qualifications & <em>Training</em></h2>
+    </div>
+    <div class="cert-list rv">
+      <div class="cert-row"><span class="cert-name">Digital Marketing</span><span class="cert-meta">HubSpot · 2025</span></div>
+      <div class="cert-row"><span class="cert-name">Social Media Marketing</span><span class="cert-meta">HubSpot · 2025</span></div>
+      <div class="cert-row"><span class="cert-name">Social Media Marketing</span><span class="cert-meta">Coursera · 2024</span></div>
+      <div class="cert-row"><span class="cert-name">Social Media Management</span><span class="cert-meta">Coursera · 2024</span></div>
+      <div class="cert-row"><span class="cert-name">Email Marketing</span><span class="cert-meta">HubSpot · 2025</span></div>
+      <div class="cert-row"><span class="cert-name">Personal Branding</span><span class="cert-meta">Coursera · 2024</span></div>
+      <div class="cert-row"><span class="cert-name">Customer Relationship Management</span><span class="cert-meta">Coursera · 2024</span></div>
+      <div class="cert-row"><span class="cert-name">Google Data Analytics</span><span class="cert-meta">Google · 2023</span></div>
     </div>
   </div>
 </section>
@@ -475,17 +596,18 @@ footer{background:var(--black);padding:32px 0;}
           </ul>
         </div>
 
-        <div class="cc">
+        <div class="cc" style="position:relative;">
+          <span class="live-badge">● Active — Oct 2025</span>
           <div class="cc-head">
             <div class="cc-logo">N</div>
             <div><p class="cc-cat">Content Strategy · Nigeria</p><h3 class="cc-name">Nigerian Economic Summit Group (NESG)</h3></div>
           </div>
           <p class="cc-cat" style="margin-bottom:10px;">Content Strategist — 32nd Nigerian Economic Summit</p>
-          <p class="cc-desc">I served as Content Strategist for the 32nd Nigerian Economic Summit, one of Nigeria's most prestigious economic policy events. I developed and executed the content strategy that drove engagement and visibility for the summit across social media platforms.</p>
+          <p class="cc-desc">I am currently serving as Content Strategist for the 32nd Nigerian Economic Summit — one of Nigeria's most prestigious annual economic policy events. I am developing and executing the full content strategy to drive reach, engagement, and visibility for the summit across all social media platforms. The summit takes place October 26–27, 2025.</p>
           <ul class="cc-list">
-            <li>I developed and executed the full content strategy for the 32nd edition of the summit</li>
-            <li>I created content that amplified the summit's reach and engagement across platforms</li>
-            <li>I positioned NESG's social media presence to reflect the prestige and impact of the event</li>
+            <li>I am developing and executing the full content strategy for the 32nd edition of the summit</li>
+            <li>I am creating content to amplify the summit's reach and engagement across platforms</li>
+            <li>I am positioning NESG's social media presence to reflect the prestige and national impact of the event</li>
           </ul>
           <div class="what-tags" style="margin-top:14px;"><span class="what-tag">Content Strategy</span><span class="what-tag">Social Media Management</span><span class="what-tag">Event Coverage</span></div>
           <a href="https://www.instagram.com/officialnesg?stkn=a2lsYW11MXNpcmU=" target="_blank" rel="noopener noreferrer" class="pf-link-btn">View Instagram Page →</a>
@@ -544,7 +666,7 @@ footer{background:var(--black);padding:32px 0;}
           <h3 class="pc-name">Mrs Ayoola Senbajo FCIArb (UK)</h3>
           <p class="pc-desc">I managed the personal brand of Mrs Ayoola Senbajo FCIArb (UK), strategically positioning her as a leading dispute resolution authority online and building an engaged professional community around her expertise.</p>
           <ul class="pc-list">
-            <li>End-to-end personal brand management across platforms</li>
+            <li>I handled end-to-end personal brand management across platforms</li>
             <li>I developed content that reflects her unique expertise and vision</li>
             <li>I built a growing, loyal audience around her personal brand</li>
           </ul>
@@ -567,56 +689,58 @@ footer{background:var(--black);padding:32px 0;}
     </div>
     <div class="ach-grid rv">
       <div class="ac">
-        <p class="ac-platform">LinkedIn Growth</p>
-        <div class="ac-stat">3,600<span>+</span></div>
-        <p class="ac-from">Grown from 400 followers</p>
-        <div class="ac-bar-wrap"><div class="ac-bar" style="width:90%;"></div></div>
-        <h4 class="ac-t">Personal Brand, LinkedIn Followers</h4>
-        <p class="ac-d">I grew a personal brand from 400 to over 3,600 LinkedIn followers in just 12 months through consistent thought leadership content and strategic engagement.</p>
-        <span class="ac-tag">9× Follower Growth · 12 Months</span>
-      </div>
-      <div class="ac">
-        <p class="ac-platform">Instagram Reach</p>
-        <div class="ac-stat">34,000<span>+</span></div>
-        <p class="ac-from">Up from 800 views</p>
-        <div class="ac-bar-wrap"><div class="ac-bar" style="width:97%;"></div></div>
-        <h4 class="ac-t">Instagram Views, Organic Growth</h4>
-        <p class="ac-d">I scaled a brand's Instagram content views from 800 to over 34,000 through a targeted content strategy, reels optimisation, and consistent posting cadence.</p>
-        <span class="ac-tag">42× Views Increase · Organic</span>
-      </div>
-      <div class="ac">
-        <p class="ac-platform">Paid Ads, Lead Generation</p>
-        <div class="ac-stat">700<span>+</span></div>
-        <p class="ac-from">Leads on ₦60,000 budget</p>
-        <div class="ac-bar-wrap"><div class="ac-bar" style="width:85%;"></div></div>
-        <h4 class="ac-t">High-ROI Ad Campaign</h4>
-        <p class="ac-d">I generated over 700 quality leads from a single sponsored ad campaign with a budget of just ₦60,000, proving that smart strategy beats big spending.</p>
-        <span class="ac-tag">700+ Leads · ₦60K Budget</span>
-      </div>
-      <div class="ac">
-        <p class="ac-platform">Portfolio</p>
-        <div class="ac-stat">10<span>+</span></div>
-        <p class="ac-from">Brands managed end-to-end</p>
-        <div class="ac-bar-wrap"><div class="ac-bar" style="width:75%;"></div></div>
-        <h4 class="ac-t">Corporate & Personal Brand Expertise</h4>
-        <p class="ac-d">From real estate and hospitality to law, education, and tech, I have successfully managed brands across diverse industries in Nigeria and beyond.</p>
-        <span class="ac-tag">Multi-Industry · Dual Expertise</span>
+        <p class="ac-platform">Meta Ads, Lead Generation</p>
+        <div class="ac-stat">1,010<span>+</span></div>
+        <p class="ac-from">Leads from a single campaign</p>
+        <div class="ac-bar-wrap"><div class="ac-bar" style="width:98%;"></div></div>
+        <h4 class="ac-t">BKIT Catfish, Food Brand</h4>
+        <p class="ac-d">I ran a single Meta ad campaign for BKIT Catfish, a food brand, that generated over 1,010 leads.</p>
+        <span class="ac-tag">1,010+ Leads · Single Campaign</span>
       </div>
       <div class="ac">
         <p class="ac-platform">Real Estate, Sponsored Ads</p>
         <div class="ac-stat">1,000<span>+</span></div>
         <p class="ac-from">Leads generated for Landnest</p>
-        <div class="ac-bar-wrap"><div class="ac-bar" style="width:88%;"></div></div>
+        <div class="ac-bar-wrap"><div class="ac-bar" style="width:95%;"></div></div>
         <h4 class="ac-t">Landnest Homes & Properties</h4>
-        <p class="ac-d">I built a social media presence from scratch and ran targeted sponsored ads that generated over 1,000 qualified property leads for a growing real estate company.</p>
+        <p class="ac-d">I ran a real estate lead generation campaign that generated over 1,000 qualified property leads for Landnest.</p>
         <span class="ac-tag">1,000+ Leads · Real Estate</span>
       </div>
-      <div class="ac-img-card">
-        <img src="https://i.ibb.co/3Y1RBHvg/ad-1.jpg" alt="Ad Campaign Results">
-        <div class="ac-img-label">
-          <span>Campaign Results</span>
-          <p>Real numbers. Real impact.</p>
-        </div>
+      <div class="ac">
+        <p class="ac-platform">LinkedIn Growth</p>
+        <div class="ac-stat">3,600<span>+</span></div>
+        <p class="ac-from">Grown from 400 followers</p>
+        <div class="ac-bar-wrap"><div class="ac-bar" style="width:90%;"></div></div>
+        <h4 class="ac-t">Personal Brand, LinkedIn Followers</h4>
+        <p class="ac-d">I grew a personal brand from 400 to over 3,600 LinkedIn followers in 12 months through consistent thought leadership content and strategic engagement.</p>
+        <span class="ac-tag">9× Follower Growth · 12 Months</span>
+      </div>
+      <div class="ac">
+        <p class="ac-platform">Instagram Reach</p>
+        <div class="ac-stat">33,853</div>
+        <p class="ac-from">Views in a 30-day period</p>
+        <div class="ac-bar-wrap"><div class="ac-bar" style="width:92%;"></div></div>
+        <h4 class="ac-t">Instagram Views, 30 Days</h4>
+        <p class="ac-d">I drove 33,853 Instagram views in 30 days, with 82.3% of views coming from non-followers.</p>
+        <span class="ac-tag">82.3% From Non-Followers</span>
+      </div>
+      <div class="ac">
+        <p class="ac-platform">Paid Ads, Realtor</p>
+        <div class="ac-stat">57</div>
+        <p class="ac-from">Leads in one campaign</p>
+        <div class="ac-bar-wrap"><div class="ac-bar" style="width:80%;"></div></div>
+        <h4 class="ac-t">Realtor Lead Campaign</h4>
+        <p class="ac-d">I ran a lead campaign for a realtor that generated 57 leads, with 4 converting to immediate paying clients.</p>
+        <span class="ac-tag">57 Leads · 4 Immediate Conversions</span>
+      </div>
+      <div class="ac">
+        <p class="ac-platform">Organic Growth</p>
+        <div class="ac-stat">1,000<span>+</span></div>
+        <p class="ac-from">New followers gained</p>
+        <div class="ac-bar-wrap"><div class="ac-bar" style="width:85%;"></div></div>
+        <h4 class="ac-t">Personal Brand Follower Growth</h4>
+        <p class="ac-d">I ran an organic follower growth campaign for a personal brand that brought in over 1,000 new followers.</p>
+        <span class="ac-tag">1,000+ Followers · Organic</span>
       </div>
     </div>
   </div>
@@ -1219,6 +1343,24 @@ footer{background:var(--black);padding:32px 0;}
         <div class="tt-auth">
           <div class="tt-ava">B</div>
           <div><p class="tt-name">BeYofi World</p><p class="tt-role">Beauty & Tech Brand, Georgia, U.S.A</p></div>
+        </div>
+      </div>
+      <div class="tt">
+        <p class="tt-q">"</p>
+        <p class="tt-body">She ran a recruitment ad campaign for us and we received over 50 qualified applications. The quality of applicants was exactly what we were looking for. I was genuinely impressed.</p>
+        <p class="tt-stars">★★★★★</p>
+        <div class="tt-auth">
+          <div class="tt-ava">I</div>
+          <div><p class="tt-name">Dir Ifeoluwa Oladeji</p><p class="tt-role">Co-founder, Landnest Homes & Properties</p></div>
+        </div>
+      </div>
+      <div class="tt">
+        <p class="tt-q">"</p>
+        <p class="tt-body">Bariadora ran ads for my property listings and generated 57 leads within the campaign period. Out of those, 4 people converted and paid immediately. The ROI was remarkable.</p>
+        <p class="tt-stars">★★★★★</p>
+        <div class="tt-auth">
+          <div class="tt-ava">A</div>
+          <div><p class="tt-name">Ayoola Rachael</p><p class="tt-role">Realtor</p></div>
         </div>
       </div>
     </div>
