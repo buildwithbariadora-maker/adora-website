@@ -47,9 +47,28 @@ ul{list-style:none;}
 .btn-dk:hover{background:transparent;color:var(--black);}
 
 /* ── REVEAL ── */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease;}
-.rv.on{opacity:1;transform:translateY(0);}
-.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+html{overflow-x:hidden;}
+.rv{opacity:0;}
+.rv.on{animation:rvUp 1.1s cubic-bezier(.16,1,.3,1) var(--d,0s) both;}
+.rv.on.rv-left{animation-name:rvLeft;}
+.rv.on.rv-right{animation-name:rvRight;}
+.rv.on.rv-zoom{animation-name:rvZoom;animation-duration:1.3s;}
+.rv.on.rv-pop{animation-name:rvPop;animation-duration:.75s;animation-timing-function:cubic-bezier(.34,1.56,.64,1);}
+.rv.on.rv-clip{animation-name:rvClip;animation-duration:1.25s;}
+.rv.on .gl{animation:glGrow .8s cubic-bezier(.16,1,.3,1) calc(var(--d,0s) + .15s) both;}
+@keyframes rvUp{from{opacity:0;transform:translate3d(0,90px,0) scale(.95);}to{opacity:1;transform:none;}}
+@keyframes rvLeft{from{opacity:0;transform:translate3d(-140px,0,0) rotate(-2deg);}to{opacity:1;transform:none;}}
+@keyframes rvRight{from{opacity:0;transform:translate3d(140px,0,0) rotate(2deg);}to{opacity:1;transform:none;}}
+@keyframes rvZoom{from{opacity:0;transform:translate3d(0,70px,0) scale(.75);}to{opacity:1;transform:none;}}
+@keyframes rvPop{from{opacity:0;transform:scale(.3);}to{opacity:1;transform:none;}}
+@keyframes rvClip{from{opacity:0;clip-path:inset(0 0 100% 0);transform:translate3d(0,70px,0);}to{opacity:1;clip-path:inset(0 0 0 0);transform:none;}}
+@keyframes glGrow{from{width:0;}to{width:36px;}}
+.d1{--d:.15s;}.d2{--d:.3s;}.d3{--d:.45s;}.d4{--d:.6s;}
+.hs-n,.ac-stat,.af-n,.hl-num,.count{font-variant-numeric:tabular-nums;}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;}
+  .rv.on,.rv.on .gl{animation:none;}
+}
 
 /* ── PROGRESS BAR ── */
 #prog{position:fixed;top:0;left:0;z-index:999;height:2.5px;background:linear-gradient(to right,#c9a84c,#e8c96a);width:0%;pointer-events:none;transition:width .1s;}
@@ -96,11 +115,10 @@ ul{list-style:none;}
 .ti .dot{color:var(--gold);}
 
 /* ════════ WHAT WE DO ════════ */
-.what-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
 .what-card{background:var(--white);padding:40px;transition:background .4s;cursor:default;border-bottom:1px solid var(--border);}
 .what-card:hover{background:var(--off);}
 .what-num{font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:16px;}
-.what-icon{font-size:1.8rem;margin-bottom:14px;}
 .what-title{font-family:var(--serif);font-size:1.55rem;font-weight:400;margin-bottom:12px;}
 .what-desc{font-size:.88rem;color:var(--gray);line-height:1.8;margin-bottom:14px;font-weight:300;}
 .what-tags{display:flex;flex-wrap:wrap;gap:6px;}
@@ -238,28 +256,25 @@ footer{background:var(--black);padding:32px 0;}
   .iphone{width:150px;}
   .wins-grid{grid-template-columns:1fr;}
   .hero-stats{flex-direction:column;}
+  .what-grid{grid-template-columns:1fr;}
 }
 
-/* Profile optimisation before/after responsive */
-@media(max-width:600px){
-  #profile-optimisation [style*="grid-template-columns:1fr 1fr"]{
-    grid-template-columns:1fr !important;
-    gap:32px !important;
-  }
-}
 .pf-link-btn{border:1.5px solid #c9a84c;color:#c9a84c;font-size:0.7rem;padding:8px 16px;display:inline-flex;align-items:center;letter-spacing:0.12em;text-transform:uppercase;background:transparent;text-decoration:none;margin-top:12px;transition:all 0.3s;}
 .pf-link-btn:hover{background:#c9a84c;color:#0a0a0a;}
 
 /* ════════ HERO BIO ════════ */
 .hero-bio{display:flex;align-items:center;gap:24px;margin-bottom:36px;}
-.hero-bio img{width:110px;height:110px;border-radius:50%;border:2px solid #c9a84c;object-fit:cover;flex-shrink:0;}
+.hero-bio img{width:110px;height:110px;border-radius:50%;border:2px solid #c9a84c;object-fit:cover;object-position:50% 18%;flex-shrink:0;}
 .hb-name{font-family:var(--serif);font-size:2rem;font-weight:500;line-height:1.1;}
 .hb-title{font-size:.85rem;font-weight:500;color:#c9a84c;text-transform:uppercase;letter-spacing:.12em;margin-top:6px;line-height:1.5;}
 .hb-loc{font-size:.8rem;color:var(--gray);margin-top:6px;}
 
 /* ════════ ABOUT ════════ */
 .about{background:#f9f8f5;padding:88px 0;border-top:1px solid var(--border);}
-.about-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:64px;align-items:center;}
+.about-grid{display:grid;grid-template-columns:minmax(220px,.95fr) 1.6fr .9fr;gap:56px;align-items:center;}
+.about-photo{position:relative;isolation:isolate;}
+.about-photo::after{content:'';position:absolute;inset:16px -16px -16px 16px;border:1.5px solid var(--gold);z-index:-1;}
+.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%;}
 .about-bio{font-size:1rem;line-height:1.9;color:var(--gray);font-weight:300;}
 .about-facts{display:flex;flex-direction:column;gap:28px;}
 .af-n{font-family:var(--serif);font-size:3rem;font-weight:600;color:var(--gold);line-height:1;}
@@ -289,11 +304,14 @@ footer{background:var(--black);padding:32px 0;}
 @media(max-width:1024px){
   .testi-grid{grid-template-columns:1fr;}
   .about-grid{grid-template-columns:1fr;gap:40px;}
+  .about-photo{max-width:340px;}
+  .what-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:600px){
   .hero-bio{flex-direction:column;align-items:flex-start;gap:16px;}
   .hb-name{font-size:1.7rem;}
   .cert-row{flex-direction:column;align-items:flex-start;gap:4px;}
+  .what-grid{grid-template-columns:1fr;}
   .about{padding:64px 0;}
   .live-badge{position:static;display:inline-block;margin-bottom:12px;}
 }
@@ -313,7 +331,6 @@ footer{background:var(--black);padding:32px 0;}
       <a href="#clients">Clients</a>
       <a href="#results">Results</a>
       <a href="#ad-results">Ad Results</a>
-      <a href="#profile-optimisation">Before &amp; After</a>
       <a href="#testimonials">Testimonials</a>
       <a href="packages.html" style="color:var(--gold);">Packages</a>
       <a href="#contact">Contact</a>
@@ -327,7 +344,6 @@ footer{background:var(--black);padding:32px 0;}
   <a href="#clients"      onclick="cm()">Clients</a>
   <a href="#results"      onclick="cm()">Results</a>
   <a href="#ad-results"   onclick="cm()">Ad Results</a>
-  <a href="#profile-optimisation" onclick="cm()">Before &amp; After</a>
   <a href="#testimonials" onclick="cm()">Testimonials</a>
   <a href="packages.html" onclick="cm()" style="color:var(--gold);">Packages</a>
   <a href="#contact"      onclick="cm()">Contact</a>
@@ -338,8 +354,8 @@ footer{background:var(--black);padding:32px 0;}
   <div class="hero-ghost">PORTFOLIO</div>
   <div class="wrap">
     <div class="hero-inner">
-      <div class="hero-bio rv">
-        <img src="https://i.ibb.co/27Jxh7xM/id-web.jpg" alt="Bariadora Johnson">
+      <div class="hero-bio rv rv-zoom">
+        <img src="bariadora-johnson.jpg" alt="Bariadora Johnson">
         <div>
           <p class="hb-name">Bariadora Johnson</p>
           <p class="hb-title">Digital Marketing Strategist · Social Media Manager · Paid Advertising Specialist</p>
@@ -374,8 +390,9 @@ footer{background:var(--black);padding:32px 0;}
 <!-- ════════ ABOUT ════════ -->
 <section id="about" class="about" style="scroll-margin-top:68px;">
   <div class="wrap">
-    <div class="about-grid rv">
-      <div>
+    <div class="about-grid">
+      <div class="about-photo rv rv-zoom"><img src="bariadora-johnson.jpg" alt="Bariadora Johnson" loading="lazy"></div>
+      <div class="rv">
         <div class="ey-row"><span class="gl"></span><span class="eyebrow">About Me</span></div>
         <p class="about-bio">I am Bariadora Johnson — a digital marketing strategist and social media manager based in Ibadan, Nigeria. I have spent the last 3+ years building and scaling brands across real estate, hospitality, food, tech, legal, and education sectors. I specialise in paid advertising on Meta and TikTok, organic social media growth, personal brand building, and content strategy. I founded ADORA Digital Agency and built AdFlow — an AI-powered Meta ads platform for small businesses. Every brand I touch gets my full attention, my best strategy, and results I am proud to put my name on.</p>
       </div>
@@ -417,34 +434,42 @@ footer{background:var(--black);padding:32px 0;}
       <div class="ey-row"><span class="gl"></span><span class="eyebrow">What I Do</span></div>
       <h2 class="h-sec">My <em>Services</em></h2>
     </div>
-    <div class="what-grid rv">
+    <div class="what-grid">
       <div class="what-card">
         <div class="what-num">01</div>
-        <div class="what-icon">📱</div>
         <h3 class="what-title">Social Media Management</h3>
         <p class="what-desc">End-to-end management of your social media presence — content creation, scheduling, community engagement, and monthly performance reporting. I run your platforms so you can run your business.</p>
         <div class="what-tags"><span class="what-tag">Instagram</span><span class="what-tag">LinkedIn</span><span class="what-tag">TikTok</span><span class="what-tag">Twitter/X</span><span class="what-tag">Facebook</span></div>
       </div>
       <div class="what-card">
         <div class="what-num">02</div>
-        <div class="what-icon">🚀</div>
         <h3 class="what-title">Social Media Marketing</h3>
-        <p class="what-desc">Strategic paid and organic campaigns engineered to grow your audience, drive meaningful engagement, and generate real business outcomes. I build funnels that convert followers into loyal customers and brand advocates.</p>
+        <p class="what-desc">Strategic paid and organic campaigns engineered to grow your audience, drive meaningful engagement, and generate real business outcomes. I build funnels that turn followers into loyal customers and brand advocates.</p>
         <div class="what-tags"><span class="what-tag">Paid Campaigns</span><span class="what-tag">Organic Growth</span><span class="what-tag">Audience Targeting</span><span class="what-tag">ROI Tracking</span></div>
       </div>
       <div class="what-card">
         <div class="what-num">03</div>
-        <div class="what-icon">🧭</div>
-        <h3 class="what-title">Media Content Strategy</h3>
-        <p class="what-desc">A clear, purposeful content roadmap tailored to your brand's unique voice and objectives. I research your audience, map your content pillars, and build a strategy that positions you as the undeniable authority in your niche.</p>
-        <div class="what-tags"><span class="what-tag">Content Pillars</span><span class="what-tag">Audience Research</span><span class="what-tag">Brand Positioning</span><span class="what-tag">Editorial Planning</span></div>
+        <h3 class="what-title">Content Creation</h3>
+        <p class="what-desc">High-quality, on-brand content designed to stop the scroll, spark conversation, and drive action — consistently and at scale. From captions to carousels to graphics, I create content that converts attention into results.</p>
+        <div class="what-tags"><span class="what-tag">Copywriting</span><span class="what-tag">Graphics</span><span class="what-tag">Carousels</span><span class="what-tag">Content Calendar</span></div>
       </div>
       <div class="what-card">
         <div class="what-num">04</div>
-        <div class="what-icon">🎨</div>
-        <h3 class="what-title">Content Creation</h3>
-        <p class="what-desc">High-quality, on-brand content designed to stop the scroll, spark conversation, and drive action — consistently and at scale. From captions to reels to graphics, I create content that converts attention into real results.</p>
-        <div class="what-tags"><span class="what-tag">Copywriting</span><span class="what-tag">Reels & Videos</span><span class="what-tag">Graphics</span><span class="what-tag">Content Calendar</span></div>
+        <h3 class="what-title">Short Video Editing</h3>
+        <p class="what-desc">Scroll-stopping Reels, TikToks, and Shorts edited for retention — strong hooks, tight pacing, clean captions, and trending audio that keep viewers watching to the end and coming back for more.</p>
+        <div class="what-tags"><span class="what-tag">Reels</span><span class="what-tag">TikTok</span><span class="what-tag">YouTube Shorts</span><span class="what-tag">Captions & Hooks</span></div>
+      </div>
+      <div class="what-card">
+        <div class="what-num">05</div>
+        <h3 class="what-title">Google Ads</h3>
+        <p class="what-desc">Search and display campaigns that put your business in front of people already looking for what you sell. I handle keyword research, ad copy, bidding, and conversion tracking so every naira of ad spend works harder.</p>
+        <div class="what-tags"><span class="what-tag">Search Ads</span><span class="what-tag">Display Ads</span><span class="what-tag">Keyword Research</span><span class="what-tag">Conversion Tracking</span></div>
+      </div>
+      <div class="what-card">
+        <div class="what-num">06</div>
+        <h3 class="what-title">Digital Marketing</h3>
+        <p class="what-desc">A joined-up strategy across every channel that matters — social, search, email, and paid media — built around clear goals and measured by results. I connect the dots so your marketing works as one system that grows revenue.</p>
+        <div class="what-tags"><span class="what-tag">Strategy</span><span class="what-tag">Email Marketing</span><span class="what-tag">Funnels</span><span class="what-tag">Analytics & Reporting</span></div>
       </div>
     </div>
   </div>
@@ -466,7 +491,7 @@ footer{background:var(--black);padding:32px 0;}
       </div>
       <div class="tool-group">
         <p class="tool-lbl">Advertising & Analytics</p>
-        <div class="tool-pills"><span class="tool-pill">Meta Ads Manager</span><span class="tool-pill">TikTok Ads Manager</span><span class="tool-pill">Google Analytics</span><span class="tool-pill">Google Data Analytics</span></div>
+        <div class="tool-pills"><span class="tool-pill">Meta Ads Manager</span><span class="tool-pill">TikTok Ads Manager</span><span class="tool-pill">Google Ads</span><span class="tool-pill">Google Analytics</span><span class="tool-pill">Google Data Analytics</span></div>
       </div>
       <div class="tool-group">
         <p class="tool-lbl">Creation & Productivity</p>
@@ -511,7 +536,7 @@ footer{background:var(--black);padding:32px 0;}
 
     <!-- CORPORATE -->
     <div style="margin-bottom:48px;" class="rv">
-      <p class="type-lbl">🏢 Corporate Brands</p>
+      <p class="type-lbl">Corporate Brands</p>
       <div class="corp-grid">
 
         <div class="cc">
@@ -616,7 +641,7 @@ footer{background:var(--black);padding:32px 0;}
 
     <!-- PERSONAL BRANDS -->
     <div class="rv">
-      <p class="type-lbl">👤 Personal Brands</p>
+      <p class="type-lbl">Personal Brands</p>
       <div class="per-grid">
 
         <div class="pc">
@@ -845,237 +870,7 @@ footer{background:var(--black);padding:32px 0;}
 <div class="divider"></div>
 
 
-<!-- ════════ PROFILE OPTIMISATION SECTION ════════ -->
-<div class="divider"></div>
-
-<section id="profile-optimisation" class="sec" style="scroll-margin-top:68px;">
-  <div class="wrap">
-
-    <div class="rv" style="margin-bottom:52px;">
-      <div class="ey-row"><span class="gl"></span><span class="eyebrow">Profile Optimisation</span></div>
-      <h2 class="h-sec">Before &amp; <em>After</em></h2>
-      <p style="font-size:1rem;line-height:1.8;color:var(--gray);font-weight:300;max-width:560px;margin-top:13px;">
-        A well-optimised profile is the foundation of every strong social media presence. Here is what I delivered for my personal brand clients — before and after my optimisation work.
-      </p>
-    </div>
-
-    <!-- ── LINKEDIN ── -->
-    <div class="rv" style="margin-bottom:72px;">
-
-      <!-- Platform header -->
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:36px;">
-        <!-- LinkedIn SVG logo -->
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="28" height="28" rx="5" fill="#0077B5"/>
-          <path d="M8.5 11.5H11.5V20H8.5V11.5Z" fill="white"/>
-          <circle cx="10" cy="8.5" r="1.75" fill="white"/>
-          <path d="M13.5 11.5H16.3V13C16.8 12.1 17.9 11.3 19.3 11.3C22 11.3 22.5 13.1 22.5 15.4V20H19.5V16C19.5 14.9 19.5 13.5 18.1 13.5C16.7 13.5 16.5 14.7 16.5 15.9V20H13.5V11.5Z" fill="white"/>
-        </svg>
-        <div>
-          <p style="font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);">LinkedIn Profile Optimisation</p>
-          <p style="font-size:.85rem;color:var(--gray);font-weight:300;margin-top:2px;">Two personal brand profiles transformed for maximum professional impact</p>
-        </div>
-      </div>
-
-      <!-- LinkedIn Pair 1 -->
-      <div style="margin-bottom:56px;">
-        <p style="font-size:.63rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:10px;">Profile 1</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;justify-items:center;">
-
-          <!-- Before 1 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;">
-            <div style="display:flex;align-items:center;gap:10px;background:#f5f5f5;border:1.5px solid var(--border);padding:8px 20px;border-radius:99px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:#aaa;display:inline-block;"></span>
-              <span style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);">Before</span>
-            </div>
-            <div class="iphone-wrap">
-        <div class="iphone">
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="https://i.ibb.co/PGHV1Q64/IMG-5704-1.jpg" alt="LinkedIn Before 1" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
-          <div class="iphone-home"></div>
-        </div>
-      </div>
-          </div>
-
-          <!-- After 1 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;">
-            <div style="display:flex;align-items:center;gap:10px;background:#fff8e6;border:1.5px solid var(--gold);padding:8px 20px;border-radius:99px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;"></span>
-              <span style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);">After</span>
-            </div>
-            <div class="iphone-wrap">
-        <div class="iphone">
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="https://i.ibb.co/nMCfvjG3/IMG-6665-1.jpg" alt="LinkedIn After 1" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
-          <div class="iphone-home"></div>
-        </div>
-      </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- LinkedIn Pair 2 -->
-      <div>
-        <p style="font-size:.63rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:10px;">Profile 2</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;justify-items:center;">
-
-          <!-- Before 2 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;">
-            <div style="display:flex;align-items:center;gap:10px;background:#f5f5f5;border:1.5px solid var(--border);padding:8px 20px;border-radius:99px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:#aaa;display:inline-block;"></span>
-              <span style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);">Before</span>
-            </div>
-            <div class="iphone-wrap">
-        <div class="iphone">
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="https://i.ibb.co/bM9cfRdb/IMG-5905-1.jpg" alt="LinkedIn Before 2" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
-          <div class="iphone-home"></div>
-        </div>
-      </div>
-          </div>
-
-          <!-- After 2 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;">
-            <div style="display:flex;align-items:center;gap:10px;background:#fff8e6;border:1.5px solid var(--gold);padding:8px 20px;border-radius:99px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;"></span>
-              <span style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);">After</span>
-            </div>
-            <div class="iphone-wrap">
-        <div class="iphone">
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="https://i.ibb.co/mrP59QCT/IMG-6664-1.jpg" alt="LinkedIn After 2" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
-          <div class="iphone-home"></div>
-        </div>
-      </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- ── INSTAGRAM ── -->
-    <div class="rv">
-
-      <!-- Platform header -->
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:36px;">
-        <!-- Instagram gradient logo SVG -->
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="ig_grad" cx="30%" cy="107%" r="150%">
-              <stop offset="0%" stop-color="#ffd879"/>
-              <stop offset="20%" stop-color="#f5a623"/>
-              <stop offset="40%" stop-color="#e2416a"/>
-              <stop offset="70%" stop-color="#c13584"/>
-              <stop offset="100%" stop-color="#405de6"/>
-            </radialGradient>
-          </defs>
-          <rect width="28" height="28" rx="7" fill="url(#ig_grad)"/>
-          <circle cx="14" cy="14" r="5.5" stroke="white" stroke-width="2" fill="none"/>
-          <circle cx="20.5" cy="7.5" r="1.5" fill="white"/>
-          <rect x="4" y="4" width="20" height="20" rx="5" stroke="white" stroke-width="2" fill="none"/>
-        </svg>
-        <div>
-          <p style="font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);">Instagram Profile Optimisation</p>
-          <p style="font-size:.85rem;color:var(--gray);font-weight:300;margin-top:2px;">Two personal brand profiles transformed for scroll-stopping first impressions</p>
-        </div>
-      </div>
-
-      <!-- Instagram Pair 1 -->
-      <div style="margin-bottom:56px;">
-        <p style="font-size:.63rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:10px;">Profile 1</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;justify-items:center;">
-
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;">
-            <div style="display:flex;align-items:center;gap:10px;background:#f5f5f5;border:1.5px solid var(--border);padding:8px 20px;border-radius:99px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:#aaa;display:inline-block;"></span>
-              <span style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);">Before</span>
-            </div>
-            <div class="iphone-wrap">
-        <div class="iphone">
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="https://i.ibb.co/0RPjpWBz/1000158013-45111da520b0810bcedad919c30a3e25-5-22-2025-5-16-16-PM.png" alt="Instagram Before 1" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
-          <div class="iphone-home"></div>
-        </div>
-      </div>
-          </div>
-
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;">
-            <div style="display:flex;align-items:center;gap:10px;background:#fff8e6;border:1.5px solid var(--gold);padding:8px 20px;border-radius:99px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;"></span>
-              <span style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);">After</span>
-            </div>
-            <div class="iphone-wrap">
-        <div class="iphone">
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="https://i.ibb.co/DP44gYfc/IMG-6663-1.jpg" alt="Instagram After 1" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
-          <div class="iphone-home"></div>
-        </div>
-      </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Instagram Pair 2 -->
-      <div>
-        <p style="font-size:.63rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:10px;">Profile 2</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;justify-items:center;">
-
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;">
-            <div style="display:flex;align-items:center;gap:10px;background:#f5f5f5;border:1.5px solid var(--border);padding:8px 20px;border-radius:99px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:#aaa;display:inline-block;"></span>
-              <span style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);">Before</span>
-            </div>
-            <div class="iphone-wrap">
-        <div class="iphone">
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="https://i.ibb.co/7MKGy7C/work-4.png" alt="Instagram Before 2" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
-          <div class="iphone-home"></div>
-        </div>
-      </div>
-          </div>
-
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;">
-            <div style="display:flex;align-items:center;gap:10px;background:#fff8e6;border:1.5px solid var(--gold);padding:8px 20px;border-radius:99px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;"></span>
-              <span style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);">After</span>
-            </div>
-            <div class="iphone-wrap">
-        <div class="iphone">
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="https://i.ibb.co/B2yXYyfy/CE2-E1-DA5-0-EDC-4-A83-A3-AA-DC519-A400-BAF-L0-001-14-05-2026-15-04-36.jpg" alt="Instagram After 2" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-          </div>
-          <div class="iphone-home"></div>
-        </div>
-      </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════ NEW AD RESULTS SECTION ════════ -->
-<div class="divider"></div>
+<!-- ════════ AD RESULTS SECTION ════════ -->
 
 <section style="padding:96px 0;background:#fafaf8;scroll-margin-top:68px;" id="ad-results">
   <div class="wrap">
@@ -1091,19 +886,19 @@ footer{background:var(--black);padding:32px 0;}
     <!-- Stat summary row -->
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:56px;" class="rv">
       <div style="text-align:center;padding:20px 16px;background:var(--off);border:1px solid var(--border);">
-        <div style="font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;">1,000+</div>
+        <div class="count" style="font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;">1,000+</div>
         <div style="font-size:.65rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:5px;">Leads — Single Campaign</div>
       </div>
       <div style="text-align:center;padding:20px 16px;background:var(--off);border:1px solid var(--border);">
-        <div style="font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;">258</div>
+        <div class="count" style="font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;">258</div>
         <div style="font-size:.65rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:5px;">Leads — Combined Campaign</div>
       </div>
       <div style="text-align:center;padding:20px 16px;background:var(--off);border:1px solid var(--border);">
-        <div style="font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;">61K+</div>
+        <div class="count" style="font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;">61K+</div>
         <div style="font-size:.65rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:5px;">Reach — Meta Ads</div>
       </div>
       <div style="text-align:center;padding:20px 16px;background:var(--off);border:1px solid var(--border);">
-        <div style="font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;">₦84</div>
+        <div class="count" style="font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;">₦84</div>
         <div style="font-size:.65rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:5px;">Cost Per Lead</div>
       </div>
     </div>
@@ -1494,11 +1289,99 @@ window.addEventListener('scroll', () => {
   lastScroll = sy;
 }, { passive: true });
 
-/* Reveal */
+/* Hide images that fail to load, so no empty frames show */
+const hideBox = img => {
+  const box = img.closest('.img-card, .iphone-wrap, .cc-img, .ac-img-card, .about-photo') || img;
+  box.style.display = 'none';
+  const grp = box.parentElement;
+  if (grp && grp.matches('.wins-grid, .iphone-grid, .ad-feat-col, .ad-featured') &&
+      [...grp.children].every(c => c.style.display === 'none')) {
+    (grp.matches('.wins-grid') ? grp.closest('.rv, [data-group]') || grp : grp).style.display = 'none';
+  }
+};
+document.querySelectorAll('img').forEach(img => {
+  if (img.complete && img.naturalWidth === 0) hideBox(img);
+  else img.addEventListener('error', () => hideBox(img), { once: true });
+});
+
+/* Scroll animations */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const staggerGroups = [
+  ['.hero-stats', 'rv-up'], ['.about-facts', 'rv-right'], ['.what-grid', 'rv-zoom'],
+  ['.tool-pills', 'rv-pop'], ['.cert-list', 'rv-left'], ['.corp-grid', 'alt'],
+  ['.per-grid', 'rv-zoom'], ['.ach-grid', 'rv-zoom'], ['.hl-grid', 'rv-up'],
+  ['.iphone-grid', 'rv-zoom'], ['.wins-grid', 'rv-zoom'], ['.ad-featured', 'rv-zoom'],
+  ['.ad-feat-col', 'rv-right'], ['.testi-grid', 'alt'], ['.what-tags', 'rv-pop']
+];
+staggerGroups.forEach(([sel, kind]) => {
+  document.querySelectorAll(sel).forEach(g => {
+    g.classList.remove('rv', 'd1', 'd2', 'd3', 'd4');
+    [...g.children].forEach((c, i) => {
+      if (c.matches('.ad-feat-col')) return;
+      const v = kind === 'alt' ? (i % 2 ? 'rv-right' : 'rv-left') : kind;
+      c.classList.add('rv', v);
+      c.dataset.stg = '';
+    });
+  });
+});
+document.querySelectorAll('.h-sec, .cta h2').forEach(h => h.classList.add('rv', 'rv-clip', 'd1'));
+document.querySelectorAll('.img-card, .ac-img-card').forEach(c => { if (!c.classList.contains('rv')) c.classList.add('rv', 'rv-zoom'); });
+
+const settle = el => {
+  el.classList.remove('rv', 'on', 'rv-up', 'rv-left', 'rv-right', 'rv-zoom', 'rv-pop', 'rv-clip', 'd1', 'd2', 'd3', 'd4');
+  el.style.removeProperty('--d');
+};
 const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-}, { threshold: 0.07 });
-document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  entries.filter(e => e.isIntersecting)
+    .sort((a, b) => a.target.compareDocumentPosition(b.target) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1)
+    .forEach((e, i) => {
+      const el = e.target;
+      io.unobserve(el);
+      if ('stg' in el.dataset) el.style.setProperty('--d', Math.min(i * 0.11, 0.9) + 's');
+      el.addEventListener('animationend', ev => { if (ev.target === el) settle(el); });
+      el.classList.add('on');
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.rv').forEach(el => reduceMotion ? settle(el) : io.observe(el));
+
+/* Count-up numbers */
+const countIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    countIO.unobserve(e.target);
+    const { node, pre, target, comma, post } = e.target._count;
+    const t0 = performance.now(), dur = 2000;
+    const fmt = n => (comma ? n.toLocaleString('en-US') : String(n));
+    const step = now => {
+      const k = Math.min((now - t0) / dur, 1);
+      const eased = 1 - Math.pow(2, -10 * k);
+      node.nodeValue = pre + fmt(Math.round(target * (k === 1 ? 1 : eased))) + post;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}, { threshold: 0.5 });
+if (!reduceMotion) {
+  document.querySelectorAll('.hs-n, .ac-stat, .af-n, .hl-num, .count').forEach(el => {
+    const node = [...el.childNodes].find(n => n.nodeType === 3 && /\d/.test(n.nodeValue));
+    if (!node) return;
+    const m = node.nodeValue.match(/^(\D*)([\d,]+)([\s\S]*)$/);
+    if (!m) return;
+    const target = parseInt(m[2].replace(/,/g, ''), 10);
+    el._count = { node, pre: m[1], target, comma: m[2].includes(','), post: m[3] };
+    node.nodeValue = m[1] + '0' + m[3];
+    countIO.observe(el);
+  });
+}
+
+/* Hero parallax */
+const ghost = document.querySelector('.hero-ghost');
+if (ghost && !reduceMotion) {
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < window.innerHeight * 1.2) ghost.style.transform = `translate3d(${-y * 0.25}px, calc(-50% + ${y * 0.35}px), 0)`;
+  }, { passive: true });
+}
 
 /* Smooth scroll */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
