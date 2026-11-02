@@ -294,12 +294,14 @@ footer{background:var(--black);padding:32px 0;}
 .cert-name::before{content:'✓';color:#c9a84c;font-weight:700;}
 .cert-meta{font-size:.78rem;color:#c9a84c;white-space:nowrap;}
 
-/* NESG active badge */
-.live-badge{position:absolute;top:20px;right:20px;font-size:.68rem;font-weight:600;color:#22c55e;letter-spacing:.04em;}
+/* NESG status badge */
+.live-badge{position:absolute;top:20px;right:20px;font-size:.62rem;font-weight:600;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;}
 
 /* testimonials: 2 columns, odd last card spans full width */
 .testi-grid{grid-template-columns:repeat(2,1fr);}
 .testi-grid .tt:last-child:nth-child(odd){grid-column:1/-1;}
+.what-grid .what-card:last-child:nth-child(3n+1){grid-column:1/-1;}
+@media(max-width:1024px){.what-grid .what-card:last-child:nth-child(odd){grid-column:1/-1;}}
 
 @media(max-width:1024px){
   .testi-grid{grid-template-columns:1fr;}
@@ -471,6 +473,12 @@ footer{background:var(--black);padding:32px 0;}
         <p class="what-desc">A joined-up strategy across every channel that matters — social, search, email, and paid media — built around clear goals and measured by results. I connect the dots so your marketing works as one system that grows revenue.</p>
         <div class="what-tags"><span class="what-tag">Strategy</span><span class="what-tag">Email Marketing</span><span class="what-tag">Funnels</span><span class="what-tag">Analytics & Reporting</span></div>
       </div>
+      <div class="what-card">
+        <div class="what-num">07</div>
+        <h3 class="what-title">Business Solutions Systems</h3>
+        <p class="what-desc">We design and build custom digital systems that run your business — from restaurant ordering platforms where customers browse, select and pay in one link, to full e-commerce stores and fashion brand management systems that track customer profiles, measurements, payments and orders all in one place. If your business needs a system, we build it.</p>
+        <div class="what-tags"><span class="what-tag">Custom Systems</span><span class="what-tag">Ordering Platforms</span><span class="what-tag">E-commerce</span><span class="what-tag">CRM</span><span class="what-tag">Business Automation</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -620,17 +628,20 @@ footer{background:var(--black);padding:32px 0;}
         </div>
 
         <div class="cc" style="position:relative;">
-          <span class="live-badge">● Active — Oct 2026</span>
+          <span class="live-badge">Completed — Oct 2026</span>
           <div class="cc-head">
             <div class="cc-logo">N</div>
             <div><p class="cc-cat">Content Strategy · Nigeria</p><h3 class="cc-name">Nigerian Economic Summit Group (NESG)</h3></div>
           </div>
-          <p class="cc-cat" style="margin-bottom:10px;">Content Strategist — 32nd Nigerian Economic Summit</p>
-          <p class="cc-desc">I am currently serving as Content Strategist for the 32nd Nigerian Economic Summit — one of Nigeria's most prestigious annual economic policy events. I am developing and executing the full content strategy to drive reach, engagement, and visibility for the summit across all social media platforms. The summit takes place October 26–27, 2026.</p>
+          <div class="cc-img" style="width:100%;height:180px;margin-bottom:16px;">
+            <img src="nesg-logo.png" alt="Nigerian Economic Summit Group" style="width:100%;height:100%;object-fit:contain;background:#ffffff;padding:16px;">
+          </div>
+          <p class="cc-cat" style="margin-bottom:10px;">Content Strategist — 32nd Nigerian Economic Summit · Ended October 2026</p>
+          <p class="cc-desc">I served as Content Strategist for the 32nd Nigerian Economic Summit — one of Nigeria's most prestigious annual economic policy events, held October 26–27, 2026. I developed and executed the full content strategy that drove reach, engagement, and visibility for the summit across all social media platforms.</p>
           <ul class="cc-list">
-            <li>I am developing and executing the full content strategy for the 32nd edition of the summit</li>
-            <li>I am creating content to amplify the summit's reach and engagement across platforms</li>
-            <li>I am positioning NESG's social media presence to reflect the prestige and national impact of the event</li>
+            <li>I developed and executed the full content strategy for the 32nd edition of the summit</li>
+            <li>I created content that amplified the summit's reach and engagement across platforms</li>
+            <li>I positioned NESG's social media presence to reflect the prestige and national impact of the event</li>
           </ul>
           <div class="what-tags" style="margin-top:14px;"><span class="what-tag">Content Strategy</span><span class="what-tag">Social Media Management</span><span class="what-tag">Event Coverage</span></div>
           <a href="https://www.instagram.com/officialnesg?stkn=a2lsYW11MXNpcmU=" target="_blank" rel="noopener noreferrer" class="pf-link-btn">View Instagram Page →</a>
@@ -1155,6 +1166,15 @@ footer{background:var(--black);padding:32px 0;}
         <div class="tt-auth">
           <div class="tt-ava">A</div>
           <div><p class="tt-name">Ayoola Rachael</p><p class="tt-role">Realtor</p></div>
+        </div>
+      </div>
+      <div class="tt">
+        <p class="tt-q">"</p>
+        <p class="tt-body">Hi Jonathan, you did so well and we must really thank you for bringing another vibe to the summit.</p>
+        <p class="tt-stars">★★★★★</p>
+        <div class="tt-auth">
+          <div class="tt-ava" style="background:#fff;overflow:hidden;"><img src="nesg-logo.png" alt="NESG" style="width:100%;height:100%;object-fit:contain;"></div>
+          <div><p class="tt-name">Nigerian Economic Summit Group</p><p class="tt-role">32nd Nigerian Economic Summit</p></div>
         </div>
       </div>
     </div>
