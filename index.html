@@ -145,11 +145,16 @@ nav.sc{border-bottom-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.05);}
 .logo-it{opacity:.55;transition:all .3s;filter:grayscale(1);}
 .logo-it:hover{opacity:1;filter:none;}
 .logo-it img{height:44px;width:auto;object-fit:contain;}
-.cl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);}
+.cl-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:48px;}
+.cl-lbl{font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:9px;margin:44px 0 18px;}
+.cl-lbl::before{content:'';width:18px;height:1.5px;background:var(--gold);}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.cl-grid.cl-four{grid-template-columns:repeat(4,1fr);}
 .cc{background:var(--white);padding:34px;transition:background .3s;}
 .cc:hover{background:var(--off);}
 .cc-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px;}
 .cc-ava{width:48px;height:48px;background:var(--off);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--gold);flex-shrink:0;overflow:hidden;}
+.cc-ava{background:var(--white);overflow:hidden;}
 .cc-ava img{width:100%;height:100%;object-fit:contain;padding:4px;}
 .cc-cat{font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
 .cc-name{font-family:var(--serif);font-size:1.25rem;font-weight:500;line-height:1.2;}
@@ -158,7 +163,7 @@ nav.sc{border-bottom-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.05);}
 .cc-tag{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);color:var(--gray);}
 
 /* RESULTS */
-.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-bottom:52px;}
+.rs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
 .rs{background:var(--white);padding:30px 22px;}
 .rs-plat{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
 .rs-plat::before{content:'';width:14px;height:1.5px;background:var(--gold);}
@@ -247,7 +252,8 @@ footer{background:var(--black);padding:64px 0 32px;}
   .iph-row{grid-template-columns:repeat(2,1fr);}
   .tt-grid{grid-template-columns:1fr;}
   .foot-grid{grid-template-columns:1fr 1fr;}
-  .cl-grid{grid-template-columns:1fr;}
+  .cl-grid,.cl-grid.cl-four{grid-template-columns:repeat(2,1fr);}
+  .cl-intro{grid-template-columns:1fr;gap:20px;}
   .rf-grid{grid-template-columns:1fr;}
 }
 @media(max-width:768px){
@@ -267,6 +273,7 @@ footer{background:var(--black);padding:64px 0 32px;}
   .foot-grid{grid-template-columns:1fr;}
   .pc-btns{flex-direction:column;}
   .logos-row{gap:20px;}
+  .cl-grid,.cl-grid.cl-four{grid-template-columns:1fr;}
 }
 @media(max-width:480px){
   .h-mega{font-size:3.2rem;}
@@ -373,9 +380,11 @@ footer{background:var(--black);padding:64px 0 32px;}
       </div>
       <div class="rv d1" style="padding-top:20px;">
         <div class="ey"><span class="ey-line"></span><span class="ey-text">About ADORA</span></div>
-        <h2 class="h-sec">Built to Make <em>Brands</em> Unforgettable.</h2>
-        <p style="font-size:1rem;color:var(--gray);line-height:1.85;font-weight:300;margin-top:16px;">ADORA Digital Agency was founded with one conviction — that every brand deserves to be seen, heard, and remembered. We are a digital marketing and content agency that helps businesses and personal brands grow with strategy, storytelling, and results that actually move the needle.</p>
-        <p style="font-size:1rem;color:var(--gray);line-height:1.85;font-weight:300;margin-top:12px;margin-bottom:28px;">From Ibadan, Nigeria — serving brands across Nigeria, the United States, and beyond.</p>
+        <h2 class="h-sec">What We <em>Do</em></h2>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.85;font-weight:300;margin-top:16px;">ADORA is a digital agency based in Ibadan, Nigeria, helping businesses and personal brands generate revenue through digital platforms.</p>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.85;font-weight:300;margin-top:12px;">At our core, we focus on money-generating activity online — social media advertising, paid campaigns, content strategy, and email marketing — designed to bring in real customers, real leads, and real sales.</p>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.85;font-weight:300;margin-top:12px;">We also build digital infrastructure for businesses: staff management systems, e-commerce platforms, and business operations systems that make organisations more productive and scalable.</p>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.85;font-weight:300;margin-top:12px;margin-bottom:28px;">Whether you are a business looking to grow your customer base or a personal brand building authority in your industry, we design and execute the digital strategy that gets you there.</p>
         <div style="border-top:1px solid var(--border);">
           <div class="val-row"><div class="val-num">01</div><div class="val-text"><h4>Strategy First</h4><p>Every campaign starts with a clear plan built around your goals, audience, and brand voice.</p></div></div>
           <div class="val-row"><div class="val-num">02</div><div class="val-text"><h4>Content That Converts</h4><p>We create content that doesn't just look good — it drives engagement, builds trust, and generates revenue.</p></div></div>
@@ -456,94 +465,64 @@ footer{background:var(--black);padding:64px 0 32px;}
   </div>
 </section>
 
-<!-- CLIENTS -->
-<section id="clients" class="sec sec-alt" style="scroll-margin-top:68px;">
+<!-- RESULTS -->
+<section id="results" class="sec" style="scroll-margin-top:68px;">
   <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:48px;" class="rv">
-      <div>
-        <div class="ey"><span class="ey-line"></span><span class="ey-text">Our Clients</span></div>
-        <h2 class="h-sec">Brands We've <em>Elevated</em></h2>
-      </div>
-      <div>
-        <p style="font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;">From corporate institutions to personal powerhouses, across Nigeria, the U.S.A, and beyond.</p>
-        <a href="portfolio.html" class="btn btn-dk" style="margin-top:20px;display:inline-flex;">View Full Portfolio →</a>
-      </div>
+    <div class="rv" style="margin-bottom:48px;">
+      <div class="ey"><span class="ey-line"></span><span class="ey-text">Proof of Work</span></div>
+      <h2 class="h-sec">Our <em>Results</em></h2>
+      <p class="sec-sub">The numbers that matter to our clients — leads, reach, and growth.</p>
     </div>
-    <div class="logos-row rv">
-      <div class="logo-it"><img src="https://i.ibb.co/Kc1mmYFr/luaa-logo.jpg" alt="Landmark University Alumni Association"/></div>
-      <div class="logo-it"><img src="https://i.ibb.co/yFRbxggJ/landnest-logo.jpg" alt="Landnest Homes"/></div>
-      <div class="logo-it"><img src="https://i.ibb.co/FLRr7yVd/beyofi-logo.jpg" alt="BeYofi World"/></div>
-      <div class="logo-it"><img src="https://i.ibb.co/j9xTJ1KL/east-soul.png" alt="East Soul Restaurant"/></div>
-      <div class="logo-it"><img src="https://i.ibb.co/60C9827G/brandgeko-logo.jpg" alt="Brandgeko Digital Agency"/></div>
-    </div>
-    <div class="cl-grid rv">
-      <div class="cc"><div class="cc-head"><div class="cc-ava"><img src="https://i.ibb.co/yFRbxggJ/landnest-logo.jpg" alt="Landnest"/></div><div><p class="cc-cat">Real Estate</p><h3 class="cc-name">Landnest Homes &amp; Properties</h3></div></div><p class="cc-desc">Built and managed full social media presence and ran targeted sponsored ads generating over 1,000 qualified property leads for this growing real estate company.</p><div class="cc-tags"><span class="cc-tag">Social Media</span><span class="cc-tag">Lead Gen</span><span class="cc-tag">Paid Ads</span></div></div>
-      <div class="cc"><div class="cc-head"><div class="cc-ava"><img src="https://i.ibb.co/j9xTJ1KL/east-soul.png" alt="East Soul"/></div><div><p class="cc-cat">Hospitality · Garland, Texas</p><h3 class="cc-name">East Soul Restaurant &amp; Lounge</h3></div></div><p class="cc-desc">Managed full social presence for this upscale Texas dining experience, building an aspirational brand that drove reservations and loyal repeat guests.</p><div class="cc-tags"><span class="cc-tag">Social Media</span><span class="cc-tag">Content</span><span class="cc-tag">Community</span></div></div>
-      <div class="cc"><div class="cc-head"><div class="cc-ava"><img src="https://i.ibb.co/FLRr7yVd/beyofi-logo.jpg" alt="BeYofi"/></div><div><p class="cc-cat">Beauty &amp; Tech · Georgia, U.S.A</p><h3 class="cc-name">BeYofi World</h3></div></div><p class="cc-desc">Crafted brand positioning and full content direction, helping BeYofi connect with their audience, stand out in a competitive space, and build a loyal community.</p><div class="cc-tags"><span class="cc-tag">Brand Strategy</span><span class="cc-tag">Content</span><span class="cc-tag">Community</span></div></div>
-      <div class="cc"><div class="cc-head"><div class="cc-ava"><img src="https://i.ibb.co/Kc1mmYFr/luaa-logo.jpg" alt="LUAA"/></div><div><p class="cc-cat">Alumni Association</p><h3 class="cc-name">Landmark University Alumni Association</h3></div></div><p class="cc-desc">Managed social presence and brand communications for one of Nigeria's most respected university alumni communities, connecting graduates and amplifying impact.</p><div class="cc-tags"><span class="cc-tag">Social Media</span><span class="cc-tag">Brand Comms</span><span class="cc-tag">Community</span></div></div>
-    </div>
-    <!-- Personal brands -->
-    <div style="margin-top:28px;padding:32px;background:var(--white);border:1px solid var(--border);" class="rv">
-      <p style="font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Personal Brands</p>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);">
-        <div style="background:var(--white);padding:18px 20px;"><p style="font-size:.85rem;font-weight:600;margin-bottom:3px;">Dr Olusola Areo</p><p style="font-size:.75rem;color:var(--gray);">Real Estate Pro &amp; Entrepreneur</p></div>
-        <div style="background:var(--white);padding:18px 20px;"><p style="font-size:.85rem;font-weight:600;margin-bottom:3px;">Mrs Elsie Akpabio</p><p style="font-size:.75rem;color:var(--gray);">General Counsel</p></div>
-        <div style="background:var(--white);padding:18px 20px;"><p style="font-size:.85rem;font-weight:600;margin-bottom:3px;">Mrs Ibitomi Osunsedo</p><p style="font-size:.75rem;color:var(--gray);">Regional Director, West Africa — KAPLAN</p></div>
-        <div style="background:var(--white);padding:18px 20px;"><p style="font-size:.85rem;font-weight:600;margin-bottom:3px;">Mrs Ayoola Senbajo FCIArb (UK)</p><p style="font-size:.75rem;color:var(--gray);">Dispute Resolution Expert</p></div>
-      </div>
+    <div class="rs-grid rv">
+      <div class="rs"><p class="rs-plat">Portfolio</p><div class="rs-num">10<span>+</span></div><p class="rs-from">Brands managed</p><p class="rs-desc">Corporate and personal brands across Nigeria, the U.S.A, and beyond.</p></div>
+      <div class="rs"><p class="rs-plat">LinkedIn Growth</p><div class="rs-num">3,600<span>+</span></div><p class="rs-from">Up from 400 followers</p><p class="rs-desc">LinkedIn followers grown for one client in 12 months.</p></div>
+      <div class="rs"><p class="rs-plat">Instagram Views</p><div class="rs-num">34,000<span>+</span></div><p class="rs-from">Up from 800 views</p><p class="rs-desc">A 42× increase in Instagram views.</p></div>
+      <div class="rs"><p class="rs-plat">Lead Generation</p><div class="rs-num">1,000<span>+</span></div><p class="rs-from">Single campaign</p><p class="rs-desc">Leads generated from a single campaign.</p></div>
+      <div class="rs"><p class="rs-plat">Cost Per Lead</p><div class="rs-num">₦84</div><p class="rs-from">Average CPL</p><p class="rs-desc">Average cost per lead across our campaigns.</p></div>
+      <div class="rs"><p class="rs-plat">Reach</p><div class="rs-num">500,000<span>+</span></div><p class="rs-from">Across campaigns</p><p class="rs-desc">People reached across our campaigns.</p></div>
     </div>
   </div>
 </section>
 
-<!-- RESULTS -->
-<section id="results" class="sec" style="scroll-margin-top:68px;">
+<!-- CLIENTS -->
+<section id="clients" class="sec sec-alt" style="scroll-margin-top:68px;">
   <div class="wrap">
-    <div class="rv" style="margin-bottom:52px;">
-      <div class="ey"><span class="ey-line"></span><span class="ey-text">Proof of Work</span></div>
-      <h2 class="h-sec">Real Results. <em>Real Impact.</em></h2>
-      <p class="sec-sub">Numbers are great. Screenshots are better. A transparent look at what we have actually achieved.</p>
-    </div>
-    <div class="rs-grid rv">
-      <div class="rs"><p class="rs-plat">LinkedIn Growth</p><div class="rs-num">3,600<span>+</span></div><p class="rs-from">Up from 400 followers</p><div class="rs-bar"><div style="width:90%;"></div></div><p class="rs-desc">Personal brand grown in 12 months through strategic thought leadership content.</p></div>
-      <div class="rs"><p class="rs-plat">Instagram Views</p><div class="rs-num">34K<span>+</span></div><p class="rs-from">Up from 800 views</p><div class="rs-bar"><div style="width:97%;"></div></div><p class="rs-desc">Reels views scaled 42× through targeted content strategy and reels optimisation.</p></div>
-      <div class="rs"><p class="rs-plat">Lead Generation</p><div class="rs-num">1,000<span>+</span></div><p class="rs-from">Single campaign</p><div class="rs-bar"><div style="width:88%;"></div></div><p class="rs-desc">Over 1,000 qualified leads from a single food business lead generation campaign.</p></div>
-      <div class="rs"><p class="rs-plat">Cost Per Lead</p><div class="rs-num">₦84</div><p class="rs-from">Average CPL achieved</p><div class="rs-bar"><div style="width:80%;"></div></div><p class="rs-desc">Consistently driving leads at ₦84 average cost per lead across campaigns.</p></div>
-    </div>
-    <div class="rf-grid rv">
-      <div class="img-card" style="min-height:400px;"><img src="https://i.ibb.co/3Y1RBHvg/ad-1.jpg" alt="Ad Campaign Result" style="min-height:400px;"/><div class="ic-badge">700+<br><span style="font-size:.5rem;font-family:var(--sans);font-weight:500;">LEADS</span></div></div>
-      <div class="rf-col">
-        <div class="img-card" style="flex:1;min-height:190px;"><img src="https://i.ibb.co/QvxT4775/ad-2.jpg" alt="Ad Result 2" style="min-height:190px;"/></div>
-        <div class="img-card" style="flex:1;min-height:190px;"><img src="https://i.ibb.co/WNTCsQSQ/ad-3.jpg" alt="Ad Result 3" style="min-height:190px;"/></div>
+    <div class="cl-intro rv">
+      <div>
+        <div class="ey"><span class="ey-line"></span><span class="ey-text">Our Clients</span></div>
+        <h2 class="h-sec">Clients We've <em>Worked With</em></h2>
+      </div>
+      <div>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.8;font-weight:300;">From corporate institutions to top executives, across Nigeria, the U.S.A, and beyond.</p>
+        <a href="portfolio.html" class="btn btn-dk" style="margin-top:20px;display:inline-flex;">View Full Portfolio →</a>
       </div>
     </div>
-    <!-- LinkedIn -->
-    <div style="margin-top:56px;" class="rv">
-      <div class="ey" style="margin-bottom:26px;"><span class="ey-line"></span><span class="ey-text">LinkedIn Results</span></div>
-      <div class="iph-row">
-        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/F1h4tfS/link-1.png" alt="LinkedIn 1"/></div><div class="iph-home"></div></div><p class="iph-lbl">Post Impressions</p></div>
-        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/ycVWn4VK/link-2.png" alt="LinkedIn 2"/></div><div class="iph-home"></div></div><p class="iph-lbl">Post Impressions</p></div>
-        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/Y78jNWcd/link-3.png" alt="LinkedIn 3"/></div><div class="iph-home"></div></div><p class="iph-lbl">Post Impressions</p></div>
-        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/5WFbx9r9/link-4.png" alt="LinkedIn 4"/></div><div class="iph-home"></div></div><p class="iph-lbl">Post Impressions</p></div>
+    <div class="rv">
+      <p class="cl-lbl">Corporate Clients</p>
+      <div class="cl-grid">
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="N"><img src="nesg-logo.png" alt="Nigerian Economic Summit Group (NESG)"/></div><div><p class="cc-cat">Content Strategy · Nigeria</p><h3 class="cc-name">Nigerian Economic Summit Group (NESG)</h3></div></div><p class="cc-desc">We developed and executed the content strategy for the 32nd Nigerian Economic Summit.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="L"><img src="https://i.ibb.co/yFRbxggJ/landnest-logo.jpg" alt="Landnest Homes & Properties"/></div><div><p class="cc-cat">Real Estate</p><h3 class="cc-name">Landnest Homes &amp; Properties</h3></div></div><p class="cc-desc">We ran real estate lead generation that delivered 1,000+ qualified leads.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="E"><img src="https://i.ibb.co/j9xTJ1KL/east-soul.png" alt="East Soul Restaurant & Lounge"/></div><div><p class="cc-cat">Hospitality · Garland, Texas</p><h3 class="cc-name">East Soul Restaurant &amp; Lounge</h3></div></div><p class="cc-desc">We managed the full social media presence for this upscale dining and lounge brand.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="B"><img src="https://i.ibb.co/FLRr7yVd/beyofi-logo.jpg" alt="BeYofi World"/></div><div><p class="cc-cat">Beauty &amp; Tech · Georgia, USA</p><h3 class="cc-name">BeYofi World</h3></div></div><p class="cc-desc">We developed brand positioning and full content direction for this beauty and tech brand.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="B"><img src="https://i.ibb.co/60C9827G/brandgeko-logo.jpg" alt="Brandgeko Digital Agency"/></div><div><p class="cc-cat">Digital Agency · Abuja, Nigeria</p><h3 class="cc-name">Brandgeko Digital Agency</h3></div></div><p class="cc-desc">We managed their digital presence, content planning, and blog writing.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="L"><img src="https://i.ibb.co/Kc1mmYFr/luaa-logo.jpg" alt="Landmark University Alumni Association"/></div><div><p class="cc-cat">Alumni Association · Nigeria</p><h3 class="cc-name">Landmark University Alumni Association</h3></div></div><p class="cc-desc">We managed social media and brand communications for the alumni network.</p></div>
       </div>
     </div>
-    <!-- Instagram -->
-    <div style="margin-top:56px;" class="rv">
-      <div class="ey" style="margin-bottom:26px;"><span class="ey-line"></span><span class="ey-text">Instagram Results</span></div>
-      <div style="display:flex;justify-content:center;gap:56px;flex-wrap:wrap;">
-        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/Ng0bXBQs/reel-1.jpg" alt="Instagram 1"/></div><div class="iph-home"></div></div></div>
-        <div class="iph-wrap"><div class="iph"><div class="iph-notch"></div><div class="iph-screen"><img src="https://i.ibb.co/nGRHcW1/reel-2.jpg" alt="Instagram 2"/></div><div class="iph-home"></div></div></div>
+    <div class="rv">
+      <p class="cl-lbl">Real Estate Clients</p>
+      <div class="cl-grid">
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="A"><img src="audax-global-logo.png" alt="Audax Global"/></div><div><p class="cc-cat">Real Estate · Lead Generation</p><h3 class="cc-name">Audax Global</h3></div></div><p class="cc-desc">We generated 100+ qualified real estate leads.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="A">A</div><div><p class="cc-cat">Real Estate · Lead Generation</p><h3 class="cc-name">Avic Realty</h3></div></div><p class="cc-desc">We generated 100+ qualified real estate leads.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="I"><img src="ifeoluwa-oladeji-logo.png" alt="Ifeoluwa Oladeji"/></div><div><p class="cc-cat">Real Estate · Lead Generation</p><h3 class="cc-name">Ifeoluwa Oladeji</h3></div></div><p class="cc-desc">We generated 500+ qualified real estate leads.</p></div>
       </div>
     </div>
-    <!-- Wins -->
-    <div style="margin-top:56px;" class="rv">
-      <div class="ey" style="margin-bottom:26px;"><span class="ey-line"></span><span class="ey-text">Additional Wins</span></div>
-      <div class="wins-grid">
-        <div class="img-card"><img src="https://i.ibb.co/RkFHD4py/win-1.jpg" alt="Win 1" style="min-height:220px;"/></div>
-        <div class="img-card"><img src="https://i.ibb.co/fGntq44b/win-2.jpg" alt="Win 2" style="min-height:220px;"/></div>
-        <div class="img-card"><img src="https://i.ibb.co/QFQYWrXj/win-3.jpg" alt="Win 3" style="min-height:220px;"/></div>
-        <div class="img-card"><img src="https://i.ibb.co/LXcnBWjw/win-4.jpg" alt="Win 4" style="min-height:220px;"/></div>
-        <div class="img-card"><img src="https://i.ibb.co/9HMKmcs4/win-5.jpg" alt="Win 5" style="min-height:220px;"/></div>
-        <div class="img-card"><img src="https://i.ibb.co/k6v7phPT/win-6.jpg" alt="Win 6" style="min-height:220px;"/></div>
+    <div class="rv">
+      <p class="cl-lbl">Top Executive Personal Brands</p>
+      <div class="cl-grid cl-four">
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="O">O</div><div><p class="cc-cat">Real Estate Professional &amp; Entrepreneur</p><h3 class="cc-name">Dr Olusola Areo</h3></div></div><p class="cc-desc">We manage his personal brand and executive thought leadership content.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="E">E</div><div><p class="cc-cat">General Counsel</p><h3 class="cc-name">Mrs Elsie Akpabio</h3></div></div><p class="cc-desc">We manage her personal brand and executive thought leadership content.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="I">I</div><div><p class="cc-cat">Regional Director, West Africa, KAPLAN International Pathways</p><h3 class="cc-name">Mrs Ibitomi Osunsedo</h3></div></div><p class="cc-desc">We manage her personal brand and executive thought leadership content.</p></div>
+      <div class="cc"><div class="cc-head"><div class="cc-ava" data-l="A">A</div><div><p class="cc-cat">Dispute Resolution Expert</p><h3 class="cc-name">Ms. Ayoola Senbajo FCIArb (UK)</h3></div></div><p class="cc-desc">We manage her personal brand and executive thought leadership content.</p></div>
       </div>
     </div>
   </div>
@@ -682,6 +661,7 @@ const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.tar
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 document.querySelectorAll("a[href^='#']").forEach(a=>{a.addEventListener("click",e=>{const t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-72,behavior:"smooth"});}});});
 document.querySelectorAll(".cc,.tt,.svc,.rs").forEach(card=>{card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect(),x=((e.clientX-r.left)/r.width*100).toFixed(1),y=((e.clientY-r.top)/r.height*100).toFixed(1);card.style.background=`radial-gradient(circle at ${x}% ${y}%,#fefcf5 0%,#f9f8f5 60%,#fff 100%)`;});card.addEventListener("mouseleave",()=>{card.style.background="";});});
+document.querySelectorAll(".cc-ava img").forEach(img=>{const fb=()=>{const b=img.parentElement;b.textContent=b.dataset.l||"";};if(img.complete&&img.naturalWidth===0)fb();else img.addEventListener("error",fb,{once:true});});
 const hbg=document.getElementById("hbg"),mob=document.getElementById("mob");
 hbg.addEventListener("click",()=>{hbg.classList.toggle("op");mob.classList.toggle("op");document.body.style.overflow=mob.classList.contains("op")?"hidden":"";});
 function cm(){hbg.classList.remove("op");mob.classList.remove("op");document.body.style.overflow="";}
